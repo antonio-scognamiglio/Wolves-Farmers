@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7197905029755E0600232432 /* Wolves_FarmersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197904F29755E0600232432 /* Wolves_FarmersApp.swift */; };
+		7197905029755E0600232432 /* WolvesFarmersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197904F29755E0600232432 /* WolvesFarmersApp.swift */; };
 		7197905229755E0600232432 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197905129755E0600232432 /* ContentView.swift */; };
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7197904C29755E0600232432 /* Wolves&Farmers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wolves&Farmers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7197904F29755E0600232432 /* Wolves_FarmersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wolves_FarmersApp.swift; sourceTree = "<group>"; };
+		7197904C29755E0600232432 /* WolvesFarmers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolvesFarmers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7197904F29755E0600232432 /* WolvesFarmersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolvesFarmersApp.swift; sourceTree = "<group>"; };
 		7197905129755E0600232432 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 		7197904329755E0600232432 = {
 			isa = PBXGroup;
 			children = (
-				7197904E29755E0600232432 /* Wolves&Farmers */,
+				7197904E29755E0600232432 /* WolvesFarmers */,
 				7197904D29755E0600232432 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,20 +43,20 @@
 		7197904D29755E0600232432 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7197904C29755E0600232432 /* Wolves&Farmers.app */,
+				7197904C29755E0600232432 /* WolvesFarmers.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7197904E29755E0600232432 /* Wolves&Farmers */ = {
+		7197904E29755E0600232432 /* WolvesFarmers */ = {
 			isa = PBXGroup;
 			children = (
-				7197904F29755E0600232432 /* Wolves_FarmersApp.swift */,
+				7197904F29755E0600232432 /* WolvesFarmersApp.swift */,
 				7197905129755E0600232432 /* ContentView.swift */,
 				7197905329755E0700232432 /* Assets.xcassets */,
 				7197905529755E0700232432 /* Preview Content */,
 			);
-			path = "Wolves&Farmers";
+			path = WolvesFarmers;
 			sourceTree = "<group>";
 		};
 		7197905529755E0700232432 /* Preview Content */ = {
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7197904B29755E0600232432 /* Wolves&Farmers */ = {
+		7197904B29755E0600232432 /* WolvesFarmers */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7197905A29755E0700232432 /* Build configuration list for PBXNativeTarget "Wolves&Farmers" */;
+			buildConfigurationList = 7197905A29755E0700232432 /* Build configuration list for PBXNativeTarget "WolvesFarmers" */;
 			buildPhases = (
 				7197904829755E0600232432 /* Sources */,
 				7197904929755E0600232432 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = "Wolves&Farmers";
+			name = WolvesFarmers;
 			productName = "Wolves&Farmers";
-			productReference = 7197904C29755E0600232432 /* Wolves&Farmers.app */;
+			productReference = 7197904C29755E0600232432 /* WolvesFarmers.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7197904729755E0600232432 /* Build configuration list for PBXProject "Wolves&Farmers" */;
+			buildConfigurationList = 7197904729755E0600232432 /* Build configuration list for PBXProject "WolvesFarmers" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7197904B29755E0600232432 /* Wolves&Farmers */,
+				7197904B29755E0600232432 /* WolvesFarmers */,
 			);
 		};
 /* End PBXProject section */
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7197905229755E0600232432 /* ContentView.swift in Sources */,
-				7197905029755E0600232432 /* Wolves_FarmersApp.swift in Sources */,
+				7197905029755E0600232432 /* WolvesFarmersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +266,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wolves&Farmers/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WolvesFarmers/Preview Content\"";
 				DEVELOPMENT_TEAM = WK692DVRUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -295,7 +295,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wolves&Farmers/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"WolvesFarmers/Preview Content\"";
 				DEVELOPMENT_TEAM = WK692DVRUX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -320,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7197904729755E0600232432 /* Build configuration list for PBXProject "Wolves&Farmers" */ = {
+		7197904729755E0600232432 /* Build configuration list for PBXProject "WolvesFarmers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7197905829755E0700232432 /* Debug */,
@@ -329,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7197905A29755E0700232432 /* Build configuration list for PBXNativeTarget "Wolves&Farmers" */ = {
+		7197905A29755E0700232432 /* Build configuration list for PBXNativeTarget "WolvesFarmers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7197905B29755E0700232432 /* Debug */,

@@ -1,6 +1,6 @@
 //
-//  Wolves_FarmersApp.swift
-//  Wolves&Farmers
+//  WolvesFarmersApp.swift
+//  WolvesFarmers
 //
 //  Created by Antonio Scognamiglio on 16/01/23.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Wolves_FarmersApp: App {
+struct WolvesFarmersApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
