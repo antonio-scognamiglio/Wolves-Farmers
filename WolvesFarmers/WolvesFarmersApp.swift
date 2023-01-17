@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct WolvesFarmersApp: App {
+    @StateObject var gamerSession = GamerMultiPeerSession()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(gamerSession: gamerSession)
         }
     }
 }
