@@ -24,8 +24,8 @@ struct HeaderView: View {
         .frame(maxWidth: .infinity)
         .foregroundColor(.white)
         .background {
-          Rectangle()
-                .fill(Color.textBackgroundColor)
+            RoundedRectangle(cornerRadius: 10)
+                .background(Color.textBackgroundColor)
         }
     }
 }

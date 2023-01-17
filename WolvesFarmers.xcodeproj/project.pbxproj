@@ -25,14 +25,7 @@
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
 		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
-
 		D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7BB29769B25009CE94D /* AddNickname.swift */; };
-=======
-
-		71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4402976A1E300A7D7C7 /* OnBoading.swift */; };
-		71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */; };
-
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,16 +48,7 @@
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71D4F43E29769C2100A7D7C7 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
-
 		D98CE7BB29769B25009CE94D /* AddNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickname.swift; sourceTree = "<group>"; };
-=======
-
-		71D4F4402976A1E300A7D7C7 /* OnBoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoading.swift; sourceTree = "<group>"; };
-		71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-
-
-
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,27 +68,13 @@
 				3EC766432976906B00D89285 /* ContentView.swift */,
 				D98CE7BB29769B25009CE94D /* AddNickname.swift */,
 				3EC766412976905D00D89285 /* GameView.swift */,
-
 				50D5F14F2976C45600851756 /* SearchingPlayersView.swift */,
 				50D5F153297707E600851756 /* BigButtonView.swift */,
 				50D5F1512976DC4B00851756 /* SearchingCardView.swift */,
-=======
-
-				71D4F4402976A1E300A7D7C7 /* OnBoading.swift */,
-				71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */,
-
-				3EC766512976A2C100D89285 /* CardInfoView.swift */,
-
-
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				3EC766512976A2C100D89285 /* CardInfoView.swift */,
 				50D5F14B2976B39000851756 /* RoleCardView.swift */,
 				50D5F1492976B33E00851756 /* HeaderView.swift */,
-
-=======
-
-
-
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -250,18 +220,10 @@
 				3EC766402976905800D89285 /* AppDelegate.swift in Sources */,
 				50D5F14C2976B39000851756 /* RoleCardView.swift in Sources */,
 				3EC7664C29769C2300D89285 /* Card.swift in Sources */,
-
 				50D5F1502976C45600851756 /* SearchingPlayersView.swift in Sources */,
 				50D5F154297707E600851756 /* BigButtonView.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
 				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
-=======
-				71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */,
-				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
-				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
-				71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */,
-
-
 				D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */,
 				50D5F14A2976B33E00851756 /* HeaderView.swift in Sources */,
 				50D5F1522976DC4B00851756 /* SearchingCardView.swift in Sources */,

@@ -14,35 +14,24 @@ struct AddNickname: View {
     @State private var currentView = 0
     
     var body: some View {
-        
         if currentView == 0 {
-            ZStack {
-                Color.backgroundColor.ignoresSafeArea()
-                VStack (spacing: 250){
-                    HeaderView(title: "Player’s side:", subtitle: "Set your name")
-                        
+            VStack {
+                Text("Enter nickname below")
+                TextField("Nickname",text: $username)
+                    .padding()
+                
+                Button("Continue →") {
+                    multipeerSession = GamerMultiPeerSession(username: username)
+                    currentView = 1
                     
-                    TextField("Nickname",text: $username)
-                        .padding()
-                        .foregroundColor(Color(.white))
-                        .background(
-                        
-                        
-                        )
-            
-                    Button("Confirm name") {
-                        multipeerSession = GamerMultiPeerSession(username: username)
-                        currentView = 1
-                        
-                        
-                    }.buttonStyle(BorderlessButtonStyle())
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 15)
-                        .foregroundColor(.white)
-                        .background(Color(UIColor(named: "ChevronColor")!))
-                        .cornerRadius(12)
-                        .disabled(username.isEmpty ? true : false)
-                }
+                    
+                }.buttonStyle(BorderlessButtonStyle())
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 15)
+                    .foregroundColor(.white)
+                    .background(Color.accentColor)
+                    .cornerRadius(12)
+                    .disabled(username.isEmpty ? true : false)
             }
             
         }
@@ -56,8 +45,8 @@ struct AddNickname: View {
 }
 
 
-struct AddNickname_Previews: PreviewProvider {
-    static var previews: some View {
-        AddNickname(gamerSession: .init())
-    }
-}
+//struct AddNickname_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddNickname()
+//    }
+//}
