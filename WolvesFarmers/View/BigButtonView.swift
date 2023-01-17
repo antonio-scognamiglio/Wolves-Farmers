@@ -11,6 +11,7 @@ struct BigButtonView: View {
     var text: String
     var textColor: Color
     
+    // Ciao
     var backgroundColor: Color
     var body: some View {
         Button {
