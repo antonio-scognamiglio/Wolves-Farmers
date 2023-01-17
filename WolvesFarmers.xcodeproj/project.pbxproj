@@ -14,6 +14,7 @@
 		3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC76647297690A900D89285 /* WolvesFarmersApp.swift */; };
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
+		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		7197904C29755E0600232432 /* WolvesFarmers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolvesFarmers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		71D4F43E29769C2100A7D7C7 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3EC76649297690F000D89285 /* View */,
 				7197905329755E0700232432 /* Assets.xcassets */,
 				7197905529755E0700232432 /* Preview Content */,
+				71D4F43E29769C2100A7D7C7 /* Players.swift */,
 			);
 			path = WolvesFarmers;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */,
 				3EC766402976905800D89285 /* AppDelegate.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
 				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
