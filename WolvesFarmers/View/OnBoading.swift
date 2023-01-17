@@ -40,6 +40,7 @@ struct OnBoarding: View {
                             }
                         } label: {
                             Text("Skip the introduction")
+                                .font(.system(size: 20))
                                 .foregroundColor(.yellow)
                                 .fontWeight(.medium)
                                 .padding()
