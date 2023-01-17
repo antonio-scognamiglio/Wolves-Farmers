@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-struct OnBoardingPage: View {
+struct OnBoarding: View {
     
-    let previousButton: Bool
-    let nextButton: Bool
-    let skipButton: Bool
     let startButton: Bool
-    
+    let skipButton: Bool
     let title: LocalizedStringKey
     
     @Binding var selection: Int
@@ -22,42 +19,37 @@ struct OnBoardingPage: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
-                LinearGradient(gradient: Gradient(colors: [.blue, .teal]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                VStack {
-                    Text("Gather 6 players minimum")
+            VStack {
+                Spacer()
+                    Text(title)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding(.vertical, 15)
+                        .padding(.horizontal)
+                        Spacer()
                     Image("sixPeople")
                         .padding(.vertical, 20)
-                    
-                    if previousButton {
+                    Spacer()
+                    if skipButton {
                         Button {
                             withAnimation {
-                                selection += 1
+                                // more actions to come
                             }
                         } label: {
-                            Text("Previous")
-                                .foregroundColor(.black)
-                                .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.1)
-                                .background {
-                                   RoundedRectangle(cornerRadius: 15)
-                                        .fill(.yellow)
-                                }
+                            Text("Skip the introduction")
+                                .foregroundColor(.yellow)
+                                .fontWeight(.medium)
+                                .padding()
                         }
+                    }
 
-                    }
-                    
-                    if nextButton {
+                    if startButton {
                         Button {
                             withAnimation {
-                                selection += 1
+                                // more actions to come
                             }
                         } label: {
-                            Text("Next")
+                            Text("Get Started!")
                                 .foregroundColor(.black)
                                 .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.1)
                                 .background {
@@ -66,15 +58,16 @@ struct OnBoardingPage: View {
                                 }
                         }
                     }
+                Spacer()
+                Spacer()
                 }
-            }
         }
     }
     
     
-    struct OnBoardingPage_Previews: PreviewProvider {
+    struct OnBoarding_Previews: PreviewProvider {
         static var previews: some View {
-            OnBoardingPage(previousButton: true, nextButton: true, skipButton: true, startButton: false, title: "Gather minimum 6 players", selection: .constant(0))
+            OnBoarding(startButton: true, skipButton: false, title: "Gather minimum 6 players", selection: .constant(0))
         }
     }
 }
