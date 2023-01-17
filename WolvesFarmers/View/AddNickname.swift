@@ -18,27 +18,26 @@ struct AddNickname: View {
         if currentView == 0 {
             ZStack {
                 Color.backgroundColor.ignoresSafeArea()
-                VStack (spacing: 250){
-                    HeaderView(title: "Player’s side:", subtitle: "Set your name")
-                        
+                VStack (spacing: 10) {
+                    HeaderView(title: "Player’s side:", subtitle: "Set your name").padding(.bottom, 230).padding(.top, -50)
                     
-                    TextField("Nickname",text: $username)
-                        .padding()
-                        .foregroundColor(Color(.white))
-                        .background(
-                        
-                        
-                        )
-            
-                    Button("Confirm name") {
+                    CustomTextField(
+                        placeholder: Text("Insert your nickname").foregroundColor(.placeholderColor), username: $username)
+                    
+                    Rectangle()
+                        .fill(.white)
+                        .frame(width: UIScreen.main.bounds.width / 1.50, height: 2).padding(.bottom, 230)
+                    
+                    Button(action: {
                         multipeerSession = GamerMultiPeerSession(username: username)
                         currentView = 1
-                        
-                        
+                    }) {
+                        Text("Confirm name")
+                            .foregroundColor(.black)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 30)
                         .padding(.vertical, 15)
-                        .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
                         .background(Color(UIColor(named: "ChevronColor")!))
                         .cornerRadius(12)
                         .disabled(username.isEmpty ? true : false)
@@ -49,7 +48,6 @@ struct AddNickname: View {
         else if currentView == 1 {
             GameView(gamerSession: gamerSession)
         }
-
 
     }
     
