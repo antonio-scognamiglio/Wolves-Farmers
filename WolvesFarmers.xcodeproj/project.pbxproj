@@ -17,6 +17,7 @@
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
 		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
+		71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4402976A1E300A7D7C7 /* OnBoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71D4F43E29769C2100A7D7C7 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		71D4F4402976A1E300A7D7C7 /* OnBoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			children = (
 				3EC766432976906B00D89285 /* ContentView.swift */,
 				3EC766412976905D00D89285 /* GameView.swift */,
+				71D4F4402976A1E300A7D7C7 /* OnBoading.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				3EC7664C29769C2300D89285 /* Card.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
 				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
+				71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */,
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
