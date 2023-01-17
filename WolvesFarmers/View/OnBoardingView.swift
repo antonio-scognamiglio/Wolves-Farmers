@@ -12,7 +12,7 @@ struct OnBoardingView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, .teal]), startPoint: .top, endPoint: .bottom)
+            Color.backgroundColor
                 .ignoresSafeArea()
             TabView(selection: $selection) {
                 OnBoarding(image: "sixPeople", startButton: false, skipButton: true, title: "Gather 6 players minimum", selection: $selection)
