@@ -14,10 +14,14 @@
 		3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC76647297690A900D89285 /* WolvesFarmersApp.swift */; };
 		3EC7664C29769C2300D89285 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7664B29769C2300D89285 /* Card.swift */; };
 		3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7664E29769D5E00D89285 /* CardViewModel.swift */; };
+
+		3EC766522976A2C100D89285 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC766512976A2C100D89285 /* CardInfoView.swift */; };
+
 		50D5F1462976AFEF00851756 /* PickSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F1452976AFEF00851756 /* PickSideView.swift */; };
 		50D5F1482976B0EC00851756 /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F1472976B0EC00851756 /* Extension-Color.swift */; };
 		50D5F14A2976B33E00851756 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F1492976B33E00851756 /* HeaderView.swift */; };
 		50D5F14C2976B39000851756 /* RoleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F14B2976B39000851756 /* RoleCardView.swift */; };
+
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
 
@@ -35,10 +39,14 @@
 		3EC76647297690A900D89285 /* WolvesFarmersApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WolvesFarmersApp.swift; sourceTree = "<group>"; };
 		3EC7664B29769C2300D89285 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3EC7664E29769D5E00D89285 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+
+		3EC766512976A2C100D89285 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
+
 		50D5F1452976AFEF00851756 /* PickSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickSideView.swift; sourceTree = "<group>"; };
 		50D5F1472976B0EC00851756 /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		50D5F1492976B33E00851756 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		50D5F14B2976B39000851756 /* RoleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardView.swift; sourceTree = "<group>"; };
+
 		7197904C29755E0600232432 /* WolvesFarmers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolvesFarmers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -66,9 +74,13 @@
 				3EC766432976906B00D89285 /* ContentView.swift */,
 				D98CE7BB29769B25009CE94D /* AddNickname.swift */,
 				3EC766412976905D00D89285 /* GameView.swift */,
+
+				3EC766512976A2C100D89285 /* CardInfoView.swift */,
+
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				50D5F14B2976B39000851756 /* RoleCardView.swift */,
 				50D5F1492976B33E00851756 /* HeaderView.swift */,
+
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,6 +99,14 @@
 				3EC7664E29769D5E00D89285 /* CardViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3EC766532976A2C600D89285 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				71D4F43E29769C2100A7D7C7 /* Players.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7197904329755E0600232432 = {
@@ -114,10 +134,13 @@
 				3EC7664A29769BEF00D89285 /* Model */,
 				3EC76649297690F000D89285 /* View */,
 				3EC7664D29769D4400D89285 /* ViewModel */,
+
+				3EC766532976A2C600D89285 /* Utils */,
+
 				50D5F1472976B0EC00851756 /* Extension-Color.swift */,
+
 				7197905329755E0700232432 /* Assets.xcassets */,
 				7197905529755E0700232432 /* Preview Content */,
-				71D4F43E29769C2100A7D7C7 /* Players.swift */,
 			);
 			path = WolvesFarmers;
 			sourceTree = "<group>";
@@ -216,6 +239,7 @@
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
+				3EC766522976A2C100D89285 /* CardInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
