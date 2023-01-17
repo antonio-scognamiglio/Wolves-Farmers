@@ -15,18 +15,17 @@ struct OnBoardingView: View {
             LinearGradient(gradient: Gradient(colors: [.blue, .teal]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             TabView(selection: $selection) {
-                OnBoarding(startButton: false, skipButton: true, title: "Gather 6 players minimum", selection: $selection)
+                OnBoarding(image: "sixPeople", startButton: false, skipButton: true, title: "Gather 6 players minimum", selection: $selection)
                     .tag(0)
-                OnBoarding(startButton: false, skipButton: true, title: "Read the instructions", selection: $selection)
+                OnBoarding(image: "book", startButton: false, skipButton: true, title: "Read the instructions", selection: $selection)
                     .tag(1)
-                OnBoarding(startButton: false, skipButton: true, title: "Choose your side", selection: $selection)
+                OnBoarding(image: "village", startButton: false, skipButton: true, title: "Choose your side", selection: $selection)
                     .tag(2)
-                OnBoarding(startButton: true, skipButton: false, title: "Good luck and stay alive!", selection: $selection)
+                OnBoarding(image: "beware", startButton: true, skipButton: false, title: "Good luck and stay alive!", selection: $selection)
                     .tag(3)
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            //        .ignoresSafeArea()
         }
     }
 }

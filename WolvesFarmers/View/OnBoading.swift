@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnBoarding: View {
     
+    let image: String
     let startButton: Bool
     let skipButton: Bool
     let title: LocalizedStringKey
@@ -27,8 +28,10 @@ struct OnBoarding: View {
                         .foregroundColor(.white)
                         .padding(.horizontal)
                         Spacer()
-                    Image("sixPeople")
-                        .padding(.vertical, 20)
+                    Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
                     Spacer()
                     if skipButton {
                         Button {
@@ -67,7 +70,7 @@ struct OnBoarding: View {
     
     struct OnBoarding_Previews: PreviewProvider {
         static var previews: some View {
-            OnBoarding(startButton: true, skipButton: false, title: "Gather minimum 6 players", selection: .constant(0))
+            OnBoarding(image: "sixPeople", startButton: true, skipButton: false, title: "Gather minimum 6 players", selection: .constant(0))
         }
     }
 }
