@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var gamerSession : GamerMultiPeerSession
     
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -17,7 +18,7 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                 Text("Hello, world!")
-                NavigationLink(destination: GameView(gamerSession: gamerSession)) {
+                NavigationLink(destination: AddNickname(gamerSession: gamerSession)) {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.black)
                         .overlay(
@@ -32,8 +33,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(gamerSession: .init())
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(gamerSession: .init())
+//    }
+//}
