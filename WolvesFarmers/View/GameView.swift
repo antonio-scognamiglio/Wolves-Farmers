@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
+    
     @ObservedObject var gamerSession: GamerMultiPeerSession
     @State var colors: [Color] = [.green, .red, .orange, .blue, .gray].shuffled()
     
