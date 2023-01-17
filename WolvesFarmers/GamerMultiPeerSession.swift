@@ -12,14 +12,32 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     
     private let serviceType = "Hanabi"
     private let session: MCSession
-    private let myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    private var myPeerId = MCPeerID(displayName: UIDevice.current.name)
     private let serviceAdvertiser: MCNearbyServiceAdvertiser
     private let serviceBrowser: MCNearbyServiceBrowser
     private let log = Logger()
     
     @Published var connectedPeers: [MCPeerID] = []
     
+    init(username: String) {
+        let peerID = MCPeerID(displayName: username)
+        self.myPeerId = peerID
+        
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
+        serviceAdvertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceType)
+        serviceBrowser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
+        super.init()
+        
+        session.delegate = self
+        serviceAdvertiser.delegate = self
+        serviceBrowser.delegate = self
+                
+        serviceAdvertiser.startAdvertisingPeer()
+        serviceBrowser.startBrowsingForPeers()
+    }
+    
     override init() {
+        
         precondition(Thread.isMainThread)
         self.session = MCSession(peer: myPeerId)
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: serviceType)
