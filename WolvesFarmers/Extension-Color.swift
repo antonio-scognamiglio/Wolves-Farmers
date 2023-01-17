@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Color {
 
-    static let textBackgroundColor = Color("TextBackground")
+    static let textBackgroundColor = Color("DarkBlue")
     
     static let color1 = Color("Gradient1")
     static let color2 = Color("Gradient2")

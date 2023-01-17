@@ -11,7 +11,7 @@ struct CardInfoView: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color(UIColor(named: "Gradient1")!), Color(UIColor(named: "Gradient2")!)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+            Color.backgroundColor.ignoresSafeArea()
             VStack {
                 HStack {
                     Button(action: {
