@@ -29,6 +29,9 @@
 
 		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
 
+		71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4402976A1E300A7D7C7 /* OnBoading.swift */; };
+		71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,11 @@
 
 		71D4F43E29769C2100A7D7C7 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 
+		71D4F4402976A1E300A7D7C7 /* OnBoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoading.swift; sourceTree = "<group>"; };
+		71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+
+
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +83,15 @@
 				D98CE7BB29769B25009CE94D /* AddNickname.swift */,
 				3EC766412976905D00D89285 /* GameView.swift */,
 
+				71D4F4402976A1E300A7D7C7 /* OnBoading.swift */,
+				71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */,
+
 				3EC766512976A2C100D89285 /* CardInfoView.swift */,
 
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				50D5F14B2976B39000851756 /* RoleCardView.swift */,
 				50D5F1492976B33E00851756 /* HeaderView.swift */,
+
 
 			);
 			path = View;
@@ -229,8 +241,10 @@
 				3EC766402976905800D89285 /* AppDelegate.swift in Sources */,
 				50D5F14C2976B39000851756 /* RoleCardView.swift in Sources */,
 				3EC7664C29769C2300D89285 /* Card.swift in Sources */,
+				71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
 				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
+				71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */,
 
 				D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */,
 
