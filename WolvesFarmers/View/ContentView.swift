@@ -9,6 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var gamerSession : GamerMultiPeerSession
+    var numberOfPlayer: NumberOfPlayers = .six
+    
+    var cards: [String] {
+        switch numberOfPlayer {
+        case .six:
+            return ["Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer"]
+        case .seven:
+            return ["Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer"]
+        case .eight:
+            return ["Wolf", "Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer"]
+        case .nine:
+            return ["Wolf", "Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer"]
+        case .ten:
+            return ["Wolf", "Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer"]
+        case .eleven:
+            return ["Wolf", "Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer"]
+        case .twelve:
+            return ["Wolf", "Wolf", "Wolf", "Seer", "Guardian", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer", "Farmer"]
+        }
+    }
     
     
     var body: some View {
