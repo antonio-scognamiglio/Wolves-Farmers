@@ -13,6 +13,7 @@ struct RoleCardView: View {
     var body: some View {
         HStack {
             Image(imageName)
+            Spacer()
             Text(role)
                 .font(.title).bold()
                 .fixedSize()
