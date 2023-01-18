@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SearchingPlayersView: View {
-    @ObservedObject var gamerSession: GamerMultiPeerSession
+    @EnvironmentObject var gamerSession: GamerMultiPeerSession
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -25,13 +26,11 @@ struct SearchingPlayersView: View {
                         .foregroundColor(.white)
                 }
                 
-                
-                List {
-//                    ForEach(1..<6) { i in
-//                        Text("iPhone \(i)")
-//                    }
-                    Text(String(describing: gamerSession.connectedPeers.map(\.displayName)))
+                List(gamerSession.connectedPeers, id: \.self) { peer in
+                   Text(peer.displayName)
+                        .foregroundColor(.black)
                 }
+
                 .padding(.horizontal)
                 .listStyle(GroupedListStyle())
                 .scrollContentBackground(.hidden)

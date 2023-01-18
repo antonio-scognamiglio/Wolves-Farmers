@@ -14,7 +14,8 @@ struct WolvesFarmersApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(gamerSession: gamerSession)
+            ContentView()
+                .environmentObject(gamerSession)
         }
     }
 }

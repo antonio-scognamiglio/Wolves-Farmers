@@ -9,29 +9,32 @@ import SwiftUI
 
 struct FirstView: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Color.backgroundColor
                 .ignoresSafeArea()
-            VStack{
+            VStack (spacing: 10) {
                 Spacer()
-                Button{}
-            label:{
-                Text("How to Play?")
-                    .foregroundColor(Color.yellowButton)
+                Button { }
+            label: {
+                HStack(spacing: 15) {
+                    Text("How to Play?")
+                    Image(systemName: "info.circle")
+                }.foregroundColor(Color.yellowButton)
                     .buttonStyle(BorderlessButtonStyle())
                     .padding(.horizontal, 30)
                     .padding(.vertical, 15)
                     .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.width / 8.50)
                     .background(Color(UIColor(named: "1E1F24Color")!))
                     .cornerRadius(30)
-            }
+                
+            }.padding(.bottom, 100)
                 Image("wolfIcon")
                 
                 Spacer()
                 
-                Button{ }
-//                the action is yet to be assigned to the button
-            label:{
+                Button { }
+                
+            label: {
                 Text("Create a new game")
                     .foregroundColor(.black)
                     .buttonStyle(BorderlessButtonStyle())
@@ -41,25 +44,23 @@ struct FirstView: View {
                     .background(Color(UIColor(named: "ChevronColor")!))
                     .cornerRadius(12)
             }
-              
-                Button {}
+                
+                Button { }
             label: {
                 Text("Join a game")
                     .foregroundColor(Color.yellowButton)
-                    
-//                    .buttonStyle(BorderlessButtonStyle())
                     .padding(.horizontal, 30)
                     .padding(.vertical, 15)
                     .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
                     .background(Color.backgroundColor)
                     .cornerRadius(12)
                     .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.yellowButton, lineWidth: 1)
-                            )
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.yellowButton, lineWidth: 1)
+                    )
             }
                 Spacer()
-
+                
             }
         }
     }

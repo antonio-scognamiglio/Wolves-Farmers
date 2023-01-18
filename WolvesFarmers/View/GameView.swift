@@ -19,7 +19,6 @@ struct GameView: View {
             List(gamerSession.connectedPeers, id: \.self) { peer in
                Text(peer.displayName)
                     .foregroundColor(.black)
-                
             }
             ForEach(gamerSession.connectedPeers, id: \.self) { value in
                 Rectangle()
