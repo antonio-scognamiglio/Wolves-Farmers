@@ -108,6 +108,7 @@
 			children = (
 				71D4F43E29769C2100A7D7C7 /* Players.swift */,
 				3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */,
+				50D5F1472976B0EC00851756 /* Extension-Color.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -138,7 +139,6 @@
 				3EC76649297690F000D89285 /* View */,
 				3EC7664D29769D4400D89285 /* ViewModel */,
 				3EC766532976A2C600D89285 /* Utils */,
-				50D5F1472976B0EC00851756 /* Extension-Color.swift */,
 				7197905329755E0700232432 /* Assets.xcassets */,
 				7197905529755E0700232432 /* Preview Content */,
 			);

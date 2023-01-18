@@ -40,7 +40,7 @@ struct OnBoarding: View {
                             }
                         } label: {
                             Text("Skip the introduction")
-                                .foregroundColor(.yellow)
+                                .foregroundColor(Color.yellowButton)
                                 .fontWeight(.medium)
                                 .padding()
                         }
@@ -57,7 +57,7 @@ struct OnBoarding: View {
                                 .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.1)
                                 .background {
                                    RoundedRectangle(cornerRadius: 15)
-                                        .fill(.yellow)
+                                        .fill(Color.yellowButton)
                                 }
                         }
                     }

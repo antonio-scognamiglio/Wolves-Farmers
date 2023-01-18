@@ -10,7 +10,8 @@ import SwiftUI
 extension Color {
 
     static let textBackgroundColor = Color("DarkBlue")
-    static  let placeholderColor = Color("GrayPlace")
+    static let placeholderColor = Color("GrayPlace")
+    static let yellowButton = Color("ChevronColor")
     
     static let color1 = Color("Gradient1")
     static let color2 = Color("Gradient2")

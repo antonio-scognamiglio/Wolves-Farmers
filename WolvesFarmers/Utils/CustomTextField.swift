@@ -18,6 +18,7 @@ struct CustomTextField: View {
         ZStack(alignment: .center) {
             if username.isEmpty { placeholder }
             TextField("", text: $username, onEditingChanged: editingChanged, onCommit: commit).multilineTextAlignment(.center)
+                .foregroundColor(.white)
         }
     }
     
