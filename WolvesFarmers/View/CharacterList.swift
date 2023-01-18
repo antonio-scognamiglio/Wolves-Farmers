@@ -46,14 +46,7 @@ struct CharacterList: View {
                         // more actions to come
                     }
                 } label: {
-                    Text("Start the game")
-                        .fontWeight(.medium)
-                        .foregroundColor(.black)
-                        .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.08)
-                        .background {
-                           RoundedRectangle(cornerRadius: 20)
-                                .fill(Color.yellowButton)
-                        }
+                    BigButtonView(text: "Start game", textColor: .black, backgroundColor: .yellowButton)
                 }
             }
             .background {
