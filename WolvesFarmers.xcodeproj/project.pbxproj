@@ -30,6 +30,7 @@
 		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
 		71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4402976A1E300A7D7C7 /* OnBoading.swift */; };
 		71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */; };
+		71D4F4452977EC9500A7D7C7 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4442977EC9500A7D7C7 /* CharacterList.swift */; };
 		D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7BB29769B25009CE94D /* AddNickname.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		71D4F43E29769C2100A7D7C7 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		71D4F4402976A1E300A7D7C7 /* OnBoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoading.swift; sourceTree = "<group>"; };
 		71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		71D4F4442977EC9500A7D7C7 /* CharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 		D98CE7BB29769B25009CE94D /* AddNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickname.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				50D5F14B2976B39000851756 /* RoleCardView.swift */,
 				50D5F1492976B33E00851756 /* HeaderView.swift */,
+				71D4F4442977EC9500A7D7C7 /* CharacterList.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */,
 				50D5F14A2976B33E00851756 /* HeaderView.swift in Sources */,
 				50CC600E2977272700258B1A /* SearchingCardView.swift in Sources */,
+				71D4F4452977EC9500A7D7C7 /* CharacterList.swift in Sources */,
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
