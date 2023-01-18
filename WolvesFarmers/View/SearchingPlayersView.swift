@@ -30,8 +30,14 @@ struct SearchingPlayersView: View {
                 .background {
                     SearchingCardView()
                 }
-                BigButtonView(text: "Get a random character", textColor: .black, backgroundColor: .white)
-                    .padding(.vertical)
+                
+                Button {
+                    // Action
+                } label: {
+                    BigButtonView(text: "Get a random character", textColor: .black, backgroundColor: .white)
+                        .padding(.vertical)
+                }
+               
             }
         }
     }

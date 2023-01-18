@@ -13,23 +13,19 @@ struct BigButtonView: View {
     
     var backgroundColor: Color
     var body: some View {
-        Button {
-          // Add Action here
-        } label: {
-            Text(text)
-                .font(.title2)
-                .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.height / 12)
-                .foregroundColor(textColor)
-                .background {
-                    RoundedRectangle(cornerRadius: 15)
-                        .fill(backgroundColor)
-                        .background {
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(.black, lineWidth: 5)
-                        }
-                }
-        }
         
+        Text(text)
+            .font(.title2)
+            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
+            .foregroundColor(textColor)
+            .background {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(backgroundColor)
+                    .background {
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(.black, lineWidth: 5)
+                    }
+            }
     }
 }
 
