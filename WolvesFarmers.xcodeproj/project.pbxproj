@@ -29,6 +29,8 @@
 		71D4F4412976A1E300A7D7C7 /* OnBoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4402976A1E300A7D7C7 /* OnBoading.swift */; };
 		71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */; };
 		D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7BB29769B25009CE94D /* AddNickname.swift */; };
+		D98CE7CB2977EE34009CE94D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CA2977EE34009CE94D /* FirstView.swift */; };
+		D98CE7CD2977FA1C009CE94D /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		71D4F4402976A1E300A7D7C7 /* OnBoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoading.swift; sourceTree = "<group>"; };
 		71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		D98CE7BB29769B25009CE94D /* AddNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickname.swift; sourceTree = "<group>"; };
+		D98CE7CA2977EE34009CE94D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				71D4F4402976A1E300A7D7C7 /* OnBoading.swift */,
 				71D4F4422976D98700A7D7C7 /* OnBoardingView.swift */,
 				50CC600B2977270700258B1A /* BigButtonView.swift */,
+				D98CE7CA2977EE34009CE94D /* FirstView.swift */,
+				D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */,
 				50CC600D2977272700258B1A /* SearchingCardView.swift */,
 				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
 				3EC766512976A2C100D89285 /* CardInfoView.swift */,
@@ -227,9 +233,11 @@
 				50D5F1482976B0EC00851756 /* Extension-Color.swift in Sources */,
 				71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */,
 				3EC766402976905800D89285 /* AppDelegate.swift in Sources */,
+				D98CE7CD2977FA1C009CE94D /* GameRulesView.swift in Sources */,
 				50D5F14C2976B39000851756 /* RoleCardView.swift in Sources */,
 				3EC7664C29769C2300D89285 /* Card.swift in Sources */,
 				3EE0FC1E29772E3C00BC4277 /* CustomTextField.swift in Sources */,
+				D98CE7CB2977EE34009CE94D /* FirstView.swift in Sources */,
 				71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */,
 				50CC600C2977270700258B1A /* BigButtonView.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,

@@ -12,6 +12,7 @@ extension Color {
     static let textBackgroundColor = Color("DarkBlue")
     static let placeholderColor = Color("GrayPlace")
     static let yellowButton = Color("ChevronColor")
+    static let howToPlayColor = Color("1E1F24Color")
     
     static let color1 = Color("Gradient1")
     static let color2 = Color("Gradient2")
