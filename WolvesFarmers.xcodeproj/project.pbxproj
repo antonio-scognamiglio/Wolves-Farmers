@@ -99,13 +99,11 @@
 				D98CE7CA2977EE34009CE94D /* FirstView.swift */,
 				D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */,
 				3EC766512976A2C100D89285 /* CardInfoView.swift */,
-				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
 				5078B4312977EDE400DA8B65 /* CreateGameView.swift */,
+				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
+				71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */,
 				5078B4332977F5B400DA8B65 /* EndGameView.swift */,
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
-				50D5F14B2976B39000851756 /* RoleCardView.swift */,
-				50D5F1492976B33E00851756 /* HeaderView.swift */,
-				71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */,
 				71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */,
 				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
 				3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */,
@@ -192,6 +190,8 @@
 		71D4F44F29786EB700A7D7C7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				50D5F1492976B33E00851756 /* HeaderView.swift */,
+				50D5F14B2976B39000851756 /* RoleCardView.swift */,
 				50CC600B2977270700258B1A /* BigButtonView.swift */,
 				D98CE7D0297818B9009CE94D /* GameRulesCard.swift */,
 				50CC600D2977272700258B1A /* SearchingCardView.swift */,
