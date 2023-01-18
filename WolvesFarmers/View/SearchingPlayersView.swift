@@ -26,6 +26,7 @@ struct SearchingPlayersView: View {
                     Text("Minimum of 6 players are required")
                         .foregroundColor(.white)
                 }
+                .padding()
                 
                 List(gamerSession.connectedPeers, id: \.self) { peer in
                    Text(peer.displayName)
@@ -40,14 +41,14 @@ struct SearchingPlayersView: View {
                 .listStyle(GroupedListStyle())
                 .scrollContentBackground(.hidden)
                 .cornerRadius(20)
-                .frame(width: UIScreen.main.bounds.width / 1.20, height: UIScreen.main.bounds.height / 2)
+                .frame(width: UIScreen.main.bounds.width / 1.20, height: UIScreen.main.bounds.height / 2.1)
                 .background {
                     SearchingCardView()
                 }
                 
                 NavigationLink(destination: CharacterListView()) {
                     BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
-                        .padding(.vertical)
+                        .padding(.top, 30)
                 }
                 
             }
@@ -58,5 +59,7 @@ struct SearchingPlayersView: View {
 struct SearchingPlayersView_Previews: PreviewProvider {
     static var previews: some View {
         SearchingPlayersView(gamerSession: .init())
+            .environmentObject(CardViewModel())
+            .environmentObject(GamerMultiPeerSession())
     }
 }

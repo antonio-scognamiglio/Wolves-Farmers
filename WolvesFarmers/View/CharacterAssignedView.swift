@@ -34,5 +34,6 @@ struct CharacterAssignedView: View {
 struct CharacterAssignedView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterAssignedView()
+            .environmentObject(CardViewModel())
     }
 }

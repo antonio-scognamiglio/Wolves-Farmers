@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var gamerSession : GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
+    @AppStorage("showOnboarding") private var showOnboarding = true
     
     var numberOfPlayer: NumberOfPlayers = .six
     
@@ -100,6 +101,9 @@ struct ContentView: View {
                     
                 }
             }
+        }
+        .fullScreenCover(isPresented: $showOnboarding){
+            OnBoardingView()
         }
     }
 }

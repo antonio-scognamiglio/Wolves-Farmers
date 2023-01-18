@@ -26,6 +26,7 @@ struct CreateGameView: View {
                                 
                             Text("You will be automatically assigned as The Storyteller. Ask your friends to join the game with the same Wi-Fi connection and make sure Bluetooth is turned on.")
                                 .multilineTextAlignment(.center)
+                                .foregroundColor(.black)
                                 .padding()
                         }
                     }
