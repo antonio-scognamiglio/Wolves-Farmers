@@ -36,7 +36,7 @@ struct OnBoarding: View {
                     if skipButton {
                         Button {
                             withAnimation {
-                                // more actions to come
+                               showOnboarding = false
                             }
                         } label: {
                             Text("Skip the introduction")
@@ -49,7 +49,7 @@ struct OnBoarding: View {
                     if startButton {
                         Button {
                             withAnimation {
-                                // more actions to come
+                                showOnboarding = false
                             }
                         } label: {
                             Text("Get Started!")

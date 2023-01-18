@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnBoardingView: View {
     @State private var selection = 0
+    @AppStorage("showOnboarding") private var showOnboarding = true
     
     var body: some View {
         ZStack {
