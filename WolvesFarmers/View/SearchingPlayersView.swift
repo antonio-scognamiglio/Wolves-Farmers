@@ -13,8 +13,16 @@ struct SearchingPlayersView: View {
             Color.backgroundColor
                 .ignoresSafeArea()
             VStack {
-                HeaderView(title: "Storyteller", subtitle: "Searching for players...")
-                    .padding(.bottom, 100)
+                HeaderView(title: "Step 2/3", subtitle: "Searching for players...")
+                
+                HStack {
+                    Image(systemName: "exclamationmark.circle")
+                        .foregroundColor(.red)
+                        .font(.title2)
+                        .bold()
+                    Text("Minimum of 6 players are required")
+                        .foregroundColor(.white)
+                }
                 
                 
                 List {
@@ -31,13 +39,13 @@ struct SearchingPlayersView: View {
                     SearchingCardView()
                 }
                 
+                // Should be disabled if less than 6 people are connected
                 Button {
                     // Action
                 } label: {
-                    BigButtonView(text: "Get a random character", textColor: .black, backgroundColor: .white)
+                    BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
                         .padding(.vertical)
                 }
-               
             }
         }
     }
