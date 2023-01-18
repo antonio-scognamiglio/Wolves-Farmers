@@ -36,6 +36,7 @@
 		D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7BB29769B25009CE94D /* AddNickname.swift */; };
 		D98CE7CB2977EE34009CE94D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CA2977EE34009CE94D /* FirstView.swift */; };
 		D98CE7CD2977FA1C009CE94D /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */; };
+		D98CE7D1297818B9009CE94D /* GameRulesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7D0297818B9009CE94D /* GameRulesCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D98CE7BB29769B25009CE94D /* AddNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickname.swift; sourceTree = "<group>"; };
 		D98CE7CA2977EE34009CE94D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
+		D98CE7D0297818B9009CE94D /* GameRulesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				50CC600B2977270700258B1A /* BigButtonView.swift */,
 				D98CE7CA2977EE34009CE94D /* FirstView.swift */,
 				D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */,
+				D98CE7D0297818B9009CE94D /* GameRulesCard.swift */,
 				50CC600D2977272700258B1A /* SearchingCardView.swift */,
 				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
 				5078B4312977EDE400DA8B65 /* CreateGameView.swift */,
@@ -265,6 +268,7 @@
 				50D5F14A2976B33E00851756 /* HeaderView.swift in Sources */,
 				50CC600E2977272700258B1A /* SearchingCardView.swift in Sources */,
 				71D4F4492978085100A7D7C7 /* PlayerGameStartedView.swift in Sources */,
+				D98CE7D1297818B9009CE94D /* GameRulesCard.swift in Sources */,
 				71D4F4452977EC9500A7D7C7 /* CharacterListView.swift in Sources */,
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
