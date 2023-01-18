@@ -9,17 +9,22 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var gamerSession: GamerMultiPeerSession
+    @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @State var colors: [Color] = [.green, .red, .orange, .blue, .gray].shuffled()
     
     var body: some View {
         VStack(alignment: .center) {
             Text("TRY")
-            Spacer()
+            
+            List(gamerSession.connectedPeers, id: \.self) { peer in
+               Text(peer.displayName)
+                    .foregroundColor(.black)
+                
+            }
             ForEach(gamerSession.connectedPeers, id: \.self) { value in
                 Rectangle()
                     .fill(colors[gamerSession.connectedPeers.firstIndex(of: value)!])
-                    .frame(width: 300, height: 300)
+                    .frame(width: 40, height: 40)
             }
         }
         .padding()
