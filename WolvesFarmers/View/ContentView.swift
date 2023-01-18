@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var gamerSession : GamerMultiPeerSession
+    @EnvironmentObject var cardModel: CardViewModel
+    
     var numberOfPlayer: NumberOfPlayers = .six
     
     var cards: [String] {
@@ -33,23 +35,6 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            //            VStack {
-            //                Image(systemName: "globe")
-            //                    .imageScale(.large)
-            //                    .foregroundColor(.accentColor)
-            //                Text("Hello, world!")
-            //                NavigationLink(destination: AddNickname(gamerSession: gamerSession)) {
-            //                    RoundedRectangle(cornerRadius: 10)
-            //                        .foregroundColor(.black)
-            //                        .overlay(
-            //                            Text("Start")
-            //                                .bold()
-            //                                .foregroundColor(.white))
-            //                        .frame(width: 120, height: 45)
-            //                }
-            //            }
-            //            .padding()
-            
             
             ZStack {
                 Color.backgroundColor
@@ -73,7 +58,7 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: SearchingPlayersView()) {
+                    NavigationLink(destination: CreateGameView()) {
                         Text("Create a new game")
                             .foregroundColor(.black)
                             .buttonStyle(BorderlessButtonStyle())
@@ -84,7 +69,20 @@ struct ContentView: View {
                             .cornerRadius(12)
                     }
                   
-                    NavigationLink(destination: AddNickname()) {
+//                    NavigationLink(destination: AddNickname()) {
+//                        Text("Join a game")
+//                            .foregroundColor(Color.yellowButton)
+//                            .padding(.horizontal, 30)
+//                            .padding(.vertical, 15)
+//                            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
+//                            .background(Color.backgroundColor)
+//                            .cornerRadius(12)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 12)
+//                                    .stroke(Color.yellowButton, lineWidth: 1)
+//                            )
+//                    }
+                    NavigationLink(destination: CharacterAssignedView()) {
                         Text("Join a game")
                             .foregroundColor(Color.yellowButton)
                             .padding(.horizontal, 30)

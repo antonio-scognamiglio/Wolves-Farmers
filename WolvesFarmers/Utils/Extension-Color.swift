@@ -17,5 +17,8 @@ extension Color {
     static let color1 = Color("Gradient1")
     static let color2 = Color("Gradient2")
     
+    static let textYellow = Color("YellowText")
+    
     static let backgroundColor = LinearGradient(gradient: Gradient(colors: [color1, color2]), startPoint: .top, endPoint: .bottom)
+    static let backgroundColorDark = LinearGradient(gradient: Gradient(colors: [textBackgroundColor, color2]), startPoint: .top, endPoint: .bottom)
 }

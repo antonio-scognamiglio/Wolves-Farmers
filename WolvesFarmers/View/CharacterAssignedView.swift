@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CharacterAssignedView: View {
+    
+    @EnvironmentObject var cardModel: CardViewModel
+    
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -22,6 +25,7 @@ struct CharacterAssignedView: View {
                 }
                 Image("Wolf")
                 Spacer()
+                
             }
         }
     }

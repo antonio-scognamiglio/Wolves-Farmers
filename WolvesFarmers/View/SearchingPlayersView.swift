@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchingPlayersView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
+    @EnvironmentObject var cardModel: CardViewModel
     
     var body: some View {
         ZStack {
@@ -29,6 +30,10 @@ struct SearchingPlayersView: View {
                 List(gamerSession.connectedPeers, id: \.self) { peer in
                    Text(peer.displayName)
                         .foregroundColor(.black)
+                        .onAppear {
+//                            cardModel.users.append(peer.displayName)
+//                            print("CardModel username = \(cardModel.users)")
+                        }
                 }
 
                 .padding(.horizontal)
@@ -40,13 +45,11 @@ struct SearchingPlayersView: View {
                     SearchingCardView()
                 }
                 
-                // Should be disabled if less than 6 people are connected
-                Button {
-                    // Action
-                } label: {
+                NavigationLink(destination: CharacterListView()) {
                     BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
                         .padding(.vertical)
                 }
+                
             }
         }
     }
