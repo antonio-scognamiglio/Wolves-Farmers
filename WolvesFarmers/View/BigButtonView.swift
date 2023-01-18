@@ -10,6 +10,7 @@ import SwiftUI
 struct BigButtonView: View {
     var text: String
     var textColor: Color
+    var borderColor: Color = .black
     
     var backgroundColor: Color
     var body: some View {
@@ -23,7 +24,7 @@ struct BigButtonView: View {
                     .fill(backgroundColor)
                     .background {
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(.black, lineWidth: 5)
+                            .stroke(borderColor, lineWidth: 5)
                     }
             }
     }
