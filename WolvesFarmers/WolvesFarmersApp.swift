@@ -10,12 +10,14 @@ import SwiftUI
 @main
 struct WolvesFarmersApp: App {
     @StateObject var gamerSession = GamerMultiPeerSession()
+    @StateObject var cardModel = CardViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(gamerSession)
+                .environmentObject(cardModel)
         }
     }
 }

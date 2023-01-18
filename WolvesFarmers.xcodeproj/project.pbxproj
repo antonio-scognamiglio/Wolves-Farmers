@@ -16,6 +16,8 @@
 		3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7664E29769D5E00D89285 /* CardViewModel.swift */; };
 		3EC766522976A2C100D89285 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC766512976A2C100D89285 /* CardInfoView.swift */; };
 		3EE0FC1E29772E3C00BC4277 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */; };
+		3EF3AC0129782F9200EDC9FE /* NightTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */; };
+		3EF3AC0329782F9F00EDC9FE /* MorningTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */; };
 		5078B4322977EDE400DA8B65 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078B4312977EDE400DA8B65 /* CreateGameView.swift */; };
 		5078B4342977F5B400DA8B65 /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078B4332977F5B400DA8B65 /* EndGameView.swift */; };
 		50CC600C2977270700258B1A /* BigButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC600B2977270700258B1A /* BigButtonView.swift */; };
@@ -49,6 +51,8 @@
 		3EC7664E29769D5E00D89285 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		3EC766512976A2C100D89285 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightTimeView.swift; sourceTree = "<group>"; };
+		3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningTimeView.swift; sourceTree = "<group>"; };
 		5078B4312977EDE400DA8B65 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		5078B4332977F5B400DA8B65 /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
 		50CC600B2977270700258B1A /* BigButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigButtonView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */,
 				71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */,
 				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
+				3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */,
+				3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				D98CE7CB2977EE34009CE94D /* FirstView.swift in Sources */,
 				71D4F4432976D98700A7D7C7 /* OnBoardingView.swift in Sources */,
 				50CC600C2977270700258B1A /* BigButtonView.swift in Sources */,
+				3EF3AC0129782F9200EDC9FE /* NightTimeView.swift in Sources */,
 				71D4F447297805F300A7D7C7 /* CharacterAssignedView.swift in Sources */,
 				3EC766442976906B00D89285 /* ContentView.swift in Sources */,
 				3EC7663E2976905000D89285 /* GamerMultiPeerSession.swift in Sources */,
@@ -274,6 +281,7 @@
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
 				50CC60102977273100258B1A /* SearchingPlayersView.swift in Sources */,
+				3EF3AC0329782F9F00EDC9FE /* MorningTimeView.swift in Sources */,
 				3EC766522976A2C100D89285 /* CardInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

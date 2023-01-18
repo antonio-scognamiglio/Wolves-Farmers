@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreateGameView: View {
+    @EnvironmentObject var gamerSession : GamerMultiPeerSession
+    @EnvironmentObject var cardModel: CardViewModel
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -28,12 +30,11 @@ struct CreateGameView: View {
                         }
                     }
 
-                Button {
-                    // Action
-                } label: {
-                    BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
+                NavigationLink(destination: SearchingPlayersView()) {
+                    BigButtonView(text: "Understand", textColor: .black, backgroundColor: .yellowButton)
                         .padding(.vertical)
                 }
+
             }
         }
     }
