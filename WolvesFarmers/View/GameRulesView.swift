@@ -10,27 +10,18 @@ import SwiftUI
 struct GameRulesView: View {
     var body: some View {
         
-           
             ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()
                 VStack {
-                    ScrollView {
-                        Text("Game Rules")
-                            .bold()
-                        
-                            .foregroundColor(Color.white)
-                            .font(.system(size: 36, weight: .regular, design: .rounded))
-                        
-                        
-                        Text("""
-The Master (storyteller) manages the game and calls the characters during the nights. All the characters apart from the wolves belong to the village. The Wolves play for themselves.
-
-There are two parties who fight in this game:
-The Villagers and The Wolves and the game is divided in two phases, day and night.
-""")
-                        .padding(30)
+                    Text("Game Rules")
                         .bold()
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 36, weight: .regular, design: .rounded))
+                    
+                    ScrollView {
+                        Text("\(Text("The Master (storyteller)").bold()) manages the game and calls the characters during the nights. All the characters apart from the wolves belong to the village. The Wolves play for themselves. There are two parties who fight in this game: \n\n\(Text("The Villagers").fontWeight(.bold)) and \(Text("The Wolves").bold()) and the game is divided in two phases, day and night.")
+                        .padding(30)
                         
                         .foregroundColor(Color.white)
                         .font(.system(size: 20, weight: .regular, design: .rounded))
@@ -41,6 +32,7 @@ The Villagers and The Wolves and the game is divided in two phases, day and nigh
                         GameRulesCard(characterImage: "WolfRules", characterName: "Farmer")
                         
                     }
+                    .padding(.top, -30)
                 }
             }
             
