@@ -9,14 +9,11 @@ import SwiftUI
 
 struct AddNickname: View {
     @State private var username = ""
-    @State var gamerSession: GamerMultiPeerSession?
-//    @ObservedObject var gamerSession: GamerMultiPeerSession
+    @EnvironmentObject var gamerSession: GamerMultiPeerSession
 //    @EnvironmentObject var cardVieModel: CardViewModel
     @State var isNavigation = false
     
     var body: some View {
-        
-        NavigationView {
             
             ZStack {
                 Color.backgroundColor.ignoresSafeArea()
@@ -30,9 +27,9 @@ struct AddNickname: View {
                         .fill(.white)
                         .frame(width: UIScreen.main.bounds.width / 1.50, height: 2).padding(.bottom, 230)
                     
-                    NavigationLink(destination: GameView().environmentObject(gamerSession!), isActive: $isNavigation) {
+                    NavigationLink(destination: GameView(), isActive: $isNavigation) {
                         Button(action: {
-                            gamerSession = GamerMultiPeerSession(username: username)
+                            gamerSession.assignUsername(username: username)
                             isNavigation.toggle()
                         }) {
                             Text("Confirm name")
@@ -50,7 +47,6 @@ struct AddNickname: View {
             }
           
         }
-    }
 }
 
 
