@@ -56,7 +56,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 VStack (spacing: 10) {
                     Spacer()
-                    NavigationLink(destination: Text("Ciao")) {
+                    NavigationLink(destination: GameRulesView()) {
                         HStack(spacing: 15) {
                             Text("How to Play?")
                             Image(systemName: "info.circle")
