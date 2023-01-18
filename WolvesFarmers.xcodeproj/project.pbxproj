@@ -16,6 +16,7 @@
 		3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7664E29769D5E00D89285 /* CardViewModel.swift */; };
 		3EC766522976A2C100D89285 /* CardInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC766512976A2C100D89285 /* CardInfoView.swift */; };
 		3EE0FC1E29772E3C00BC4277 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */; };
+		5078B4322977EDE400DA8B65 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5078B4312977EDE400DA8B65 /* CreateGameView.swift */; };
 		50CC600C2977270700258B1A /* BigButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC600B2977270700258B1A /* BigButtonView.swift */; };
 		50CC600E2977272700258B1A /* SearchingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC600D2977272700258B1A /* SearchingCardView.swift */; };
 		50CC60102977273100258B1A /* SearchingPlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC600F2977273100258B1A /* SearchingPlayersView.swift */; };
@@ -41,6 +42,7 @@
 		3EC7664E29769D5E00D89285 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		3EC766512976A2C100D89285 /* CardInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoView.swift; sourceTree = "<group>"; };
 		3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		5078B4312977EDE400DA8B65 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
 		50CC600B2977270700258B1A /* BigButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigButtonView.swift; sourceTree = "<group>"; };
 		50CC600D2977272700258B1A /* SearchingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingCardView.swift; sourceTree = "<group>"; };
 		50CC600F2977273100258B1A /* SearchingPlayersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchingPlayersView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				50CC600B2977270700258B1A /* BigButtonView.swift */,
 				50CC600D2977272700258B1A /* SearchingCardView.swift */,
 				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
+				5078B4312977EDE400DA8B65 /* CreateGameView.swift */,
 				3EC766512976A2C100D89285 /* CardInfoView.swift */,
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				50D5F14B2976B39000851756 /* RoleCardView.swift */,
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5078B4322977EDE400DA8B65 /* CreateGameView.swift in Sources */,
 				50D5F1462976AFEF00851756 /* PickSideView.swift in Sources */,
 				50D5F1482976B0EC00851756 /* Extension-Color.swift in Sources */,
 				71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */,
