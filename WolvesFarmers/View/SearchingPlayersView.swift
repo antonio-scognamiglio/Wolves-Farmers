@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchingPlayersView: View {
+    @ObservedObject var gamerSession: GamerMultiPeerSession
     var body: some View {
         ZStack {
             Color.backgroundColor
@@ -26,9 +27,10 @@ struct SearchingPlayersView: View {
                 
                 
                 List {
-                    ForEach(1..<6) { i in
-                        Text("iPhone \(i)")
-                    }
+//                    ForEach(1..<6) { i in
+//                        Text("iPhone \(i)")
+//                    }
+                    Text(String(describing: gamerSession.connectedPeers.map(\.displayName)))
                 }
                 .padding(.horizontal)
                 .listStyle(GroupedListStyle())
@@ -53,6 +55,6 @@ struct SearchingPlayersView: View {
 
 struct SearchingPlayersView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchingPlayersView()
+        SearchingPlayersView(gamerSession: .init())
     }
 }

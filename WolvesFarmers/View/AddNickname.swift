@@ -9,13 +9,15 @@ import SwiftUI
 
 struct AddNickname: View {
     @State private var username = ""
-    @State private var multipeerSession: GamerMultiPeerSession?
-    @ObservedObject var gamerSession: GamerMultiPeerSession
-    @State private var currentView = 0
+    @State var gamerSession: GamerMultiPeerSession?
+//    @ObservedObject var gamerSession: GamerMultiPeerSession
+//    @EnvironmentObject var cardVieModel: CardViewModel
+    @State var isNavigation = false
     
     var body: some View {
         
-        if currentView == 0 {
+        NavigationView {
+            
             ZStack {
                 Color.backgroundColor.ignoresSafeArea()
                 VStack (spacing: 10) {
@@ -28,29 +30,27 @@ struct AddNickname: View {
                         .fill(.white)
                         .frame(width: UIScreen.main.bounds.width / 1.50, height: 2).padding(.bottom, 230)
                     
-                    Button(action: {
-                        multipeerSession = GamerMultiPeerSession(username: username)
-                        currentView = 1
-                    }) {
-                        Text("Confirm name")
-                            .foregroundColor(.black)
-                    }.buttonStyle(BorderlessButtonStyle())
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 15)
-                        .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
-                        .background(Color(UIColor(named: "ChevronColor")!))
-                        .cornerRadius(12)
-                        .disabled(username.isEmpty ? true : false)
+                    NavigationLink(destination: GameView().environmentObject(gamerSession!), isActive: $isNavigation) {
+                        Button(action: {
+                            gamerSession = GamerMultiPeerSession(username: username)
+                            isNavigation.toggle()
+                        }) {
+                            Text("Confirm name")
+                                .foregroundColor(.black)
+                        }.buttonStyle(BorderlessButtonStyle())
+                            .padding(.horizontal, 30)
+                            .padding(.vertical, 15)
+                            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
+                            .background(Color(UIColor(named: "ChevronColor")!))
+                            .cornerRadius(12)
+                            .disabled(username.isEmpty ? true : false)
+                    }
+                    
                 }
             }
-            
+          
         }
-        else if currentView == 1 {
-            GameView(gamerSession: gamerSession)
-        }
-
     }
-    
 }
 
 

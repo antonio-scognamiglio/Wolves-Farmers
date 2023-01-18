@@ -7,8 +7,10 @@
 
 import Foundation
 
-class CardViewModel {
+class CardViewModel: ObservableObject {
     @Published var cards = [Card]()
+    
+    @Published var username = ""
     
     func resetVotation(at offsets: IndexSet) {
         offsets.forEach { i in
