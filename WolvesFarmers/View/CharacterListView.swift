@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterList: View {
+struct CharacterListView: View {
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
         GridItem(.flexible(minimum: 140, maximum: 180))
@@ -57,8 +57,8 @@ struct CharacterList: View {
     }
 }
 
-struct CharacterList_Previews: PreviewProvider {
+struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterList()
+        CharacterListView()
     }
 }
