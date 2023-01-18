@@ -11,11 +11,11 @@ struct GameRulesView: View {
     var body: some View {
         
            
-            ZStack{
+            ZStack {
                 Color.backgroundColor
                     .ignoresSafeArea()
-                VStack{
-                    ScrollView{
+                VStack {
+                    ScrollView {
                         Text("Game Rules")
                             .bold()
                         
