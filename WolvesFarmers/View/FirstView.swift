@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// is this view useful? seems to be already in content View @Antonio
 struct FirstView: View {
     var body: some View {
         ZStack {

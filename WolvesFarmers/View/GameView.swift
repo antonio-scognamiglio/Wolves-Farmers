@@ -32,6 +32,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(gamerSession: .init())
+        GameView(gamerSession: .init()).environmentObject(GamerMultiPeerSession(username: "Peppino"))
     }
 }

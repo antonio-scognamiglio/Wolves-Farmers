@@ -34,14 +34,17 @@ struct CardInfoView: View {
                             .foregroundColor(Color(UIColor(named: "ChevronColor")!))
                             .bold()
                     }
-                }.padding(.horizontal)
-                    .padding(.vertical)
-                    
+                }
+                .padding(.top, 30)
+                .padding(.horizontal)
+                
+                  Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(Color(UIColor(named: "DarkBlue")!))
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2.80)
-                        .padding(.bottom, -50)
+                        .padding(.bottom, -40)
+                    
                     VStack (spacing: 30) {
                         VStack (spacing: 7) {
                             Text("Main Objective")
@@ -65,7 +68,8 @@ struct CardInfoView: View {
                             Text("To kill everyone in the game")
                                 .foregroundColor(Color(.white))
                         }
-                    }.padding(.top)
+                    }
+                    .padding(.top)
                 }
             }
             

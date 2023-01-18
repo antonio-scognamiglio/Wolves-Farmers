@@ -19,10 +19,15 @@ struct GameRulesCard: View {
             Image(characterImage)
                 .padding()
             Text(characterName)
+                .foregroundColor(.black)
                 .font(.title).bold()
                 .fixedSize()
                 .padding(.trailing, 50)
            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundColor(.black)
+                .font(.system(size: 42))
+                .padding(.trailing, 20)
         }
         .frame(width: UIScreen.main.bounds.width / 1.20, height:UIScreen.main.bounds.width / 5.20)
         .background {
