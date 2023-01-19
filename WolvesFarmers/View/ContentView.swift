@@ -11,6 +11,8 @@ struct ContentView: View {
     @EnvironmentObject var gamerSession : GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @AppStorage("showOnboarding") private var showOnboarding = true
+    @State var isCreate = false
+    @State var isJoin = false
     
     var numberOfPlayer: NumberOfPlayers = .six
     
@@ -59,42 +61,41 @@ struct ContentView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: CreateGameView()) {
-                        Text("Create a new game")
-                            .foregroundColor(.black)
-                            .buttonStyle(BorderlessButtonStyle())
-                            .padding(.horizontal, 30)
-                            .padding(.vertical, 15)
-                            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
-                            .background(Color(UIColor(named: "ChevronColor")!))
-                            .cornerRadius(12)
+                    NavigationLink(destination: CreateGameView(), isActive: $isCreate) {
+                        Button(action: {
+//                            cardModel.isMaster = gamerSession.send(isMaster: true)
+                            isCreate.toggle()
+                        }) {
+                            Text("Create a new game")
+                                .foregroundColor(.black)
+                                .buttonStyle(BorderlessButtonStyle())
+                                .padding(.horizontal, 30)
+                                .padding(.vertical, 15)
+                                .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
+                                .background(Color(UIColor(named: "ChevronColor")!))
+                                .cornerRadius(12)
+                        }
+                        
                     }
                   
-//                    NavigationLink(destination: AddNickname()) {
-//                        Text("Join a game")
-//                            .foregroundColor(Color.yellowButton)
-//                            .padding(.horizontal, 30)
-//                            .padding(.vertical, 15)
-//                            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
-//                            .background(Color.backgroundColor)
-//                            .cornerRadius(12)
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 12)
-//                                    .stroke(Color.yellowButton, lineWidth: 1)
-//                            )
-//                    }
-                    NavigationLink(destination: CharacterAssignedView()) {
-                        Text("Join a game")
-                            .foregroundColor(Color.yellowButton)
-                            .padding(.horizontal, 30)
-                            .padding(.vertical, 15)
-                            .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
-                            .background(Color.backgroundColor)
-                            .cornerRadius(12)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.yellowButton, lineWidth: 1)
-                            )
+                    NavigationLink(destination: CharacterAssignedView(), isActive: $isJoin) {
+                        Button(action: {
+//                            cardModel.isPlayer = !gamerSession.send(isMaster: false)
+                            isJoin.toggle()
+                        }) {
+                            Text("Join a game")
+                                .foregroundColor(Color.yellowButton)
+                                .padding(.horizontal, 30)
+                                .padding(.vertical, 15)
+                                .frame(width: UIScreen.main.bounds.width / 1.10, height: UIScreen.main.bounds.width / 8.50)
+                                .background(Color.backgroundColor)
+                                .cornerRadius(12)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .stroke(Color.yellowButton, lineWidth: 1)
+                                )
+                        }
+                        
                     }
                
                     Spacer()

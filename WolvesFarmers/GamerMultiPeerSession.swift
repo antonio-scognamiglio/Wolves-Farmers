@@ -17,6 +17,10 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     private var serviceBrowser: MCNearbyServiceBrowser
     private var log = Logger()
     
+    @Published var recvdInvite: Bool = false
+    @Published var recvdInviteFrom: MCPeerID? = nil
+    @Published var invitationHandler: ((Bool, MCSession?) -> Void)?
+    
     @Published var connectedPeers: [MCPeerID] = []
     
     init(username: String) {
@@ -64,6 +68,19 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
+    func send(isMaster: Bool) -> Bool {
+        precondition(Thread.isMainThread)
+        //guard let data = try? Data(isMaster.description.data(using: .unicode)!) else { return }
+        
+        if !session.connectedPeers.isEmpty {
+            do {
+                try session.send(Data(isMaster.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
+            } catch {
+                log.error("Error for sending: \(String(describing: error))")
+            }
+        }
+        return isMaster
+    }
 }
 
 extension GamerMultiPeerSession: MCNearbyServiceAdvertiserDelegate {
