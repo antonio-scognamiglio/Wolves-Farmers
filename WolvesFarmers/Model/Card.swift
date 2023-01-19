@@ -9,12 +9,17 @@ import Foundation
 import SwiftUI
 import MultipeerConnectivity
 
-struct Card: Identifiable, Equatable {
+struct Card: Identifiable, Codable, Equatable {
     let id = UUID()
     var name: String
-    var image: Image
+    var imageName: String
     var username: String = ""
     var isDeath: Bool = false
+    
+    var image: Image {
+        Image(imageName)
+    }
+    
 //    var votes: Int
     
 //    init() {

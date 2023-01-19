@@ -7,9 +7,11 @@
 
 import MultipeerConnectivity
 import os
+import SwiftUI
 
 class GamerMultiPeerSession: NSObject, ObservableObject {
     
+    var viewModel: CardViewModel? = nil
     
     private let serviceType = "Hanabi"
     private var session: MCSession
@@ -17,6 +19,8 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     private var serviceAdvertiser: MCNearbyServiceAdvertiser
     private var serviceBrowser: MCNearbyServiceBrowser
     private var log = Logger()
+    var isMaster:Bool = false
+    var cards: [Card] = []
     
     @Published var recvdInvite: Bool = false
     @Published var recvdInviteFrom: MCPeerID? = nil
@@ -70,18 +74,43 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
-    func send(isMaster: Bool) -> Bool {
+//    func send(isMaster: Bool) -> Bool {
+//        precondition(Thread.isMainThread)
+//        //guard let data = try? Data(isMaster.description.data(using: .unicode)!) else { return }
+//        
+//        if !session.connectedPeers.isEmpty {
+//            do {
+//                try session.send(Data(isMaster.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
+//            } catch {
+//                log.error("Error for sending: \(String(describing: error))")
+//            }
+//        }
+//        return isMaster
+//    }
+    
+    func send(cards: [Card], isMaster: Bool) -> (Bool, [Card]) {
         precondition(Thread.isMainThread)
-        //guard let data = try? Data(isMaster.description.data(using: .unicode)!) else { return }
         
         if !session.connectedPeers.isEmpty {
-            do {
-                try session.send(Data(isMaster.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
-            } catch {
-                log.error("Error for sending: \(String(describing: error))")
+          
+            if (!isMaster) {
+                do {
+//                    try session.send(Data(card.name.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
+                    let data = try JSONEncoder().encode(cards)
+                    try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                      
+                } catch {
+                    log.error("Error sending: \(String(describing: error))")
+                }
+            } else {
+                do {
+                    try session.send(Data(isMaster.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
+                } catch {
+                    log.error("Error sending: \(String(describing: error))")
+                }
             }
         }
-        return isMaster
+        return (isMaster, cards)
     }
 }
 
@@ -121,7 +150,27 @@ extension GamerMultiPeerSession: MCSessionDelegate {
         }
     }
     
-    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) { }
+//    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+//        print("aaaaaa")
+//        print(String(data: data, encoding: .unicode).flatMap(Bool.init))
+//        isMaster = (String(data: data, encoding: .unicode).flatMap(Bool.init) != nil)
+//        print("MASTER\(isMaster)")
+//    }
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        print("aaaaaa")
+        
+        if let decodedCards = try? JSONDecoder().decode([Card].self, from: data) as [Card] {
+            viewModel?.decoded(cards: decodedCards)
+        } else {
+            // Qui è quale
+            print(String(data: data, encoding: .utf8))
+            isMaster = (String(data: data, encoding: .unicode).flatMap(Bool.init) != nil)
+            print("MASTER\(isMaster)")
+        }
+        
+    }
+    
+    
     
     public func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
         log.error("Receiving streams is not supported")

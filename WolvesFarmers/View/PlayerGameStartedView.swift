@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PlayerGameStartedView: View {
+    @EnvironmentObject var cardModel: CardViewModel
+    @EnvironmentObject var gameModel: GamerMultiPeerSession
+    @State var isFlipped = false
     var body: some View {
         
         GeometryReader { geo in
@@ -33,17 +36,31 @@ struct PlayerGameStartedView: View {
                     }
                     .frame(width: geo.size.width * 0.95)
                     
-                    Image("Wolf")
-                        .padding(.bottom)
+                    CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: isFlipped)
                     Button {
+                        print ("Is master: \(cardModel.isMaster)")
+                        if cardModel.isMaster {
+                            isFlipped = true
+                        }
                         // More actions to come
                     } label: {
                         BigButtonView(text: "Flip Card", textColor: .black, backgroundColor: .yellowButton)
                     }
                 }
             }
+        }.onAppear() {
+            print(gameModel.isMaster)
+            cardModel.isMaster = gameModel.isMaster
         }
     }
+    public func showCard() -> Card {
+        
+        print("CARDMODEL: \(cardModel.cards)")
+        
+        
+        return cardModel.cards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "")
+    }
+    
 }
 
 struct PlayerGameStartedView_Previews: PreviewProvider {
