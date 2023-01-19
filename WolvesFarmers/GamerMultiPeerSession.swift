@@ -10,9 +10,10 @@ import os
 
 class GamerMultiPeerSession: NSObject, ObservableObject {
     
+    
     private let serviceType = "Hanabi"
     private var session: MCSession
-    private var myPeerId = MCPeerID(displayName: UIDevice.current.name)
+    var myPeerId = MCPeerID(displayName: UIDevice.current.name)
     private var serviceAdvertiser: MCNearbyServiceAdvertiser
     private var serviceBrowser: MCNearbyServiceBrowser
     private var log = Logger()
@@ -50,6 +51,7 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         
         precondition(Thread.isMainThread)
         self.session = MCSession(peer: myPeerId)
+        
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: serviceType)
         self.serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: serviceType)
         

@@ -10,6 +10,8 @@ import SwiftUI
 struct GameView: View {
     
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
+    @EnvironmentObject var cardModel: CardViewModel
+    
     @State var colors: [Color] = [.green, .red, .orange, .blue, .gray].shuffled()
     
     var body: some View {
@@ -25,8 +27,18 @@ struct GameView: View {
                     .fill(colors[gamerSession.connectedPeers.firstIndex(of: value)!])
                     .frame(width: 40, height: 40)
             }
+        }.onAppear(){
+            mammt()
         }
         .padding()
+    }
+    
+    public func mammt(){
+        print("quella \(cardModel.username)")
+        for x in cardModel.cards {
+            print(" quella grande cessa della mamma di giuseppe/percoca \(x.username)")
+        }
+        cardModel.cards.first(where: {$0.username == cardModel.username})?.image
     }
 }
 

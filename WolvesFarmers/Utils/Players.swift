@@ -7,6 +7,13 @@
 
 import Foundation
 
-enum NumberOfPlayers {
-    case six, seven, eight, nine, ten, eleven, twelve
+enum NumberOfPlayers: Int, CaseIterable {
+    case one = 1
+    case six = 6
+    case seven = 7
+    case eight = 8
+    case nine = 9
+    case ten = 10
+    case eleven = 11
+    case twelve = 12
 }
