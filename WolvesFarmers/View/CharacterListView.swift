@@ -54,7 +54,7 @@ struct CharacterListView: View {
                                         .foregroundColor(.black)
                                     
                                 }.onAppear {
-                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(systemName: ""), username: peer.displayName, isDeath: false, votes: 0))
+                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(systemName: ""), username: peer.displayName, isDeath: false))
                                     print("Cards: \(cardModel.cards)")
                                 }
                                 .frame(width: 80, alignment: .leading)

@@ -10,12 +10,12 @@ import SwiftUI
 import MultipeerConnectivity
 
 struct Card: Identifiable, Equatable {
-    let id: UUID?
+    let id = UUID()
     var name: String
     var image: Image
-    var username: String
-    var isDeath: Bool
-    var votes: Int
+    var username: String = ""
+    var isDeath: Bool = false
+//    var votes: Int
     
 //    init() {
 //        self.id = UUID.init()
@@ -26,14 +26,14 @@ struct Card: Identifiable, Equatable {
 //        self.votation = 0
 //    }
     
-    init(name: String, image: Image, username: String, isDeath: Bool, votes: Int) {
-        self.id = UUID.init()
-        self.name = name
-        self.image = image
-        self.username = username
-        self.isDeath = isDeath
-        self.votes = votes
-    }
+//    init(name: String, image: Image, username: String, isDeath: Bool, votes: Int) {
+//        self.id = UUID.init()
+//        self.name = name
+//        self.image = image
+//        self.username = username
+//        self.isDeath = isDeath
+//        self.votes = votes
+//    }
     
 //    init(name: String, username: MCPeerID) {
 //        self.name = name

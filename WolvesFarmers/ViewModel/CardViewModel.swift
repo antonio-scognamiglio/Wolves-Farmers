@@ -16,9 +16,9 @@ class CardViewModel: ObservableObject {
     @Published var isStarted = false
     @Published var nameCard = ""
     
-    func resetVotation(at offsets: IndexSet) {
-        offsets.forEach { i in
-            cards[i].votes = 0
-        }
-    }
+//    func resetVotation(at offsets: IndexSet) {
+//        offsets.forEach { i in
+//            cards[i].votes = 0
+//        }
+//    }
 }
