@@ -35,6 +35,7 @@
 		71D4F4452977EC9500A7D7C7 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */; };
 		71D4F447297805F300A7D7C7 /* CharacterAssignedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */; };
 		71D4F4492978085100A7D7C7 /* PlayerGameStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */; };
+		71D4F451297949FF00A7D7C7 /* FrontCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F450297949FF00A7D7C7 /* FrontCardView.swift */; };
 		D98CE7BC29769B25009CE94D /* AddNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7BB29769B25009CE94D /* AddNickname.swift */; };
 		D98CE7CB2977EE34009CE94D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CA2977EE34009CE94D /* FirstView.swift */; };
 		D98CE7CD2977FA1C009CE94D /* GameRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */; };
@@ -71,6 +72,7 @@
 		71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAssignedView.swift; sourceTree = "<group>"; };
 		71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameStartedView.swift; sourceTree = "<group>"; };
+		71D4F450297949FF00A7D7C7 /* FrontCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontCardView.swift; sourceTree = "<group>"; };
 		D98CE7BB29769B25009CE94D /* AddNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNickname.swift; sourceTree = "<group>"; };
 		D98CE7CA2977EE34009CE94D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRulesView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				5078B4332977F5B400DA8B65 /* EndGameView.swift */,
 				50D5F1452976AFEF00851756 /* PickSideView.swift */,
 				71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */,
+				71D4F450297949FF00A7D7C7 /* FrontCardView.swift */,
 				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
 				3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */,
 				3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */,
@@ -295,6 +298,7 @@
 				71D4F4452977EC9500A7D7C7 /* CharacterListView.swift in Sources */,
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
+				71D4F451297949FF00A7D7C7 /* FrontCardView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
 				50CC60102977273100258B1A /* SearchingPlayersView.swift in Sources */,
 				3EF3AC0329782F9F00EDC9FE /* MorningTimeView.swift in Sources */,

@@ -21,4 +21,5 @@ extension Color {
     
     static let backgroundColor = LinearGradient(gradient: Gradient(colors: [color1, color2]), startPoint: .top, endPoint: .bottom)
     static let backgroundColorDark = LinearGradient(gradient: Gradient(colors: [textBackgroundColor, color2]), startPoint: .top, endPoint: .bottom)
+    static let cardColorGradient = LinearGradient(gradient: Gradient(colors: [Color("CardColor1"), Color("CardColor2")]), startPoint: .top, endPoint: .bottom)
 }
