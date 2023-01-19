@@ -88,8 +88,8 @@ struct NightTimeView: View {
         }.onAppear {
             print("CARDDD: \(cardModel.cards)")
 //            let tupla = gamerSession.send(cards: cardModel.cards, isMaster: false)
-            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
-            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: true).1
+//            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
+            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: false).1
         }
     }
 }

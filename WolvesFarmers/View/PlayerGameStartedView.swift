@@ -36,12 +36,12 @@ struct PlayerGameStartedView: View {
                     }
                     .frame(width: geo.size.width * 0.95)
                     
-                    CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: isFlipped)
+                    CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isFlipped)
                     Button {
                         print ("Is master: \(cardModel.isMaster)")
-                        if cardModel.isMaster {
-                            isFlipped = true
-                        }
+//                        if cardModel.isMaster {
+                        isFlipped.toggle()
+//                        }
                         // More actions to come
                     } label: {
                         BigButtonView(text: "Flip Card", textColor: .black, backgroundColor: .yellowButton)
