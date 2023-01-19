@@ -34,9 +34,9 @@ struct GameView: View {
     }
     
     public func mammt(){
-        print("quella \(cardModel.username)")
+        print("OK \(cardModel.username)")
         for x in cardModel.cards {
-            print(" quella grande cessa della mamma di giuseppe/percoca \(x.username)")
+            print("Print cose\(x.username)")
         }
         cardModel.cards.first(where: {$0.username == cardModel.username})?.image
     }
