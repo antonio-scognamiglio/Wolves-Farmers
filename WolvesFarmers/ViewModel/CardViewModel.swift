@@ -13,7 +13,9 @@ class CardViewModel: ObservableObject {
     @Published var users = [String]()
     
     @Published var username = ""
+    @Published var isMaster = false
     @Published var isStarted = false
+    @Published var isPlayer = false
     @Published var nameCard = ""
     
 //    func resetVotation(at offsets: IndexSet) {

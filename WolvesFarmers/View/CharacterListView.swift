@@ -73,6 +73,7 @@ struct CharacterListView: View {
                 
                 NavigationLink(destination: NightTimeView(), isActive: $cardModel.isStarted) {
                    Button (action: {
+                       cardModel.isMaster = gamerSession.send(isMaster: true)
                        cardModel.isStarted.toggle()
                    }, label: {
                        BigButtonView(text: "Start game", textColor: .black, backgroundColor: .yellowButton)
