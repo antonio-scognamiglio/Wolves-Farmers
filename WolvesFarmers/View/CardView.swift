@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-    @State var cardImage: String
+    @State var cardImage: Image
     @State var cardName: String
     @State var isHidden: Bool
     
@@ -28,8 +28,8 @@ struct CardView: View {
                         Image("Moon")
                             .resizable()
                             .scaledToFit()
-                        if !isHidden {
-                            Image(cardImage)
+                        if isHidden {
+                            cardImage
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 250)
@@ -37,7 +37,7 @@ struct CardView: View {
                         }
                     }
                     
-                    if !isHidden{
+                    if !isHidden {
                         Text(cardName)
                             .foregroundColor(.yellowButton)
                             .fontWeight(.bold)
@@ -52,6 +52,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(cardImage: "Seer", cardName: "Farmer", isHidden: false)
+        CardView(cardImage: Image(""), cardName: "Farmer", isHidden: false)
     }
 }

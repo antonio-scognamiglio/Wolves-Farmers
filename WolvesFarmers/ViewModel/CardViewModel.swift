@@ -21,85 +21,93 @@ class CardViewModel: ObservableObject {
     
     @Published var numberOfPlayer: NumberOfPlayers = .six
     
+    
     var deck: [Card] {
         
-        var cardArray:[Card] = [Card(name: "Wolf", image: Image("WolfGameOver")),
-                               Card(name: "Seer", image: Image("Seer")),
-                               Card(name: "Guardian", image: Image("Guardian")),
-                               Card(name: "Farmer", image: Image("Farmer")),
-                               Card(name: "Farmer", image: Image("Farmer")),
-                               Card(name: "Farmer", image: Image("Farmer"))]
+        var cardArray:[Card] = [Card(name: "Wolf", imageName: "WolfGameOver"),
+                               Card(name: "Seer", imageName: "Seer"),
+                               Card(name: "Guardian", imageName: "Guardian"),
+                               Card(name: "Farmer", imageName: "Farmer"),
+                               Card(name: "Farmer", imageName: "Farmer"),
+                               Card(name: "Farmer", imageName: "Farmer")]
         
         switch numberOfPlayer {
         
        
         case .seven:
-            cardArray.append(Card(name: "Farmer", image: Image("Farmer")))
+            cardArray.append(Card(name: "Farmer", imageName: "Farmer"))
                    
         case .eight:
-            cardArray.append(Card(name: "Farmer", image: Image("Farmer")))
-            cardArray.append(Card(name: "Wolf", image: Image("WolfGameOver")))
+            cardArray.append(Card(name: "Farmer", imageName: "Farmer"))
+            cardArray.append(Card(name: "Wolf", imageName: "WolfGameOver"))
             
         case .nine:
-            return [Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Seer", image: Image("Seer")),
-                    Card(name: "Guardian", image: Image("Guardian")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer"))]
+            return [Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Seer", imageName: "Seer"),
+                    Card(name: "Guardian", imageName: "Guardian"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer")]
             
         case .ten:
-            return [Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Seer", image: Image("Seer")),
-                    Card(name: "Guardian", image: Image("Guardian")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer"))]
+            return [Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Seer", imageName: "Seer"),
+                    Card(name: "Guardian", imageName: "Guardian"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer")]
          
         case .eleven:
             return [Card(name: "Wolf",
-                         image: Image("WolfGameOver")),
-                    Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Seer", image: Image("Seer")),
-                    Card(name: "Guardian", image: Image("Guardian")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer"))]
+                         imageName: "WolfGameOver"),
+                    Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Seer", imageName: "Seer"),
+                    Card(name: "Guardian", imageName: "Guardian"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer")]
             
         case .twelve:
-            return [Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Seer", image: Image("Seer")),
-                    Card(name: "Guardian", image: Image("Guardian")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer"))]
+            return [Card(name: "Wolf", imageName:  "WolfGameOver"),
+                    Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Seer", imageName: "Seer"),
+                    Card(name: "Guardian", imageName: "Guardian"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer")]
         default:
-            return [Card(name: "Wolf", image: Image("WolfGameOver")),
-                    Card(name: "Seer", image: Image("Seer")),
-                    Card(name: "Guardian", image: Image("Guardian")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer")),
-                    Card(name: "Farmer", image: Image("Farmer"))]
+            return [Card(name: "Wolf", imageName: "WolfGameOver"),
+                    Card(name: "Seer", imageName: "Seer"),
+                    Card(name: "Guardian", imageName: "Guardian"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer"),
+                    Card(name: "Farmer", imageName: "Farmer")]
         
         }
         return cardArray
+        
+    }
+    
+    func decoded(cards: [Card]) {
+        DispatchQueue.main.async {
+            self.cards = cards
+        }
         
     }
     

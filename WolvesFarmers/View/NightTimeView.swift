@@ -10,6 +10,7 @@ import SwiftUI
 struct NightTimeView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
+    @Binding var setCards: [Card]
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
@@ -39,14 +40,27 @@ struct NightTimeView: View {
                 
                 ScrollView {
                     LazyVGrid (columns: columns) {
-                        ForEach(characters, id: \.self) { character in
+                        ForEach(gamerSession.connectedPeers, id: \.self) { peer in
                             HStack {
-                                Image(systemName: "star.fill")
+                                if !setCards.isEmpty {
+                                    setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
+                                }
                                 Spacer()
                                 VStack(alignment: .leading) {
-                                    Text(character)
-                                    Text(character)
-                                        .fontWeight(.semibold)
+                                    Text(peer.displayName)
+                                        .foregroundColor(.black)
+                                    if !setCards.isEmpty {
+                                        Text(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name)
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(.black)
+                                    }
+                                }
+                                .onAppear {
+                                    cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
+
+                                    //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
+
+                                    //                                    print("Cards: \(cardModel.cards)")
                                 }
                                 .frame(width: 80, alignment: .leading)
                             }
@@ -62,7 +76,7 @@ struct NightTimeView: View {
                 }
                 .scrollDisabled(true)
                 
-                NavigationLink(destination: MorningTimeView()) {
+                NavigationLink(destination: MorningTimeView(setCards: $setCards)) {
                     BigButtonView(text: "Switch to Morning", textColor: .black, backgroundColor: .yellowButton)
                 }
                 
@@ -71,12 +85,17 @@ struct NightTimeView: View {
                 Color.backgroundColorDark
                     .ignoresSafeArea()
             }
+        }.onAppear {
+            print("CARDDD: \(cardModel.cards)")
+//            let tupla = gamerSession.send(cards: cardModel.cards, isMaster: false)
+            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
+            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: true).1
         }
     }
 }
 
-struct NightTimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NightTimeView()
-    }
-}
+//struct NightTimeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NightTimeView(setCard: .init())
+//    }
+//}

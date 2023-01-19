@@ -18,8 +18,10 @@ struct WolvesFarmersApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(gamerSession)
-                .environmentObject(cardModel).onAppear(){
+                .environmentObject(cardModel)
+                .onAppear(){
                     saveUsername()
+                    gamerSession.viewModel = cardModel
                 }
         }
     }

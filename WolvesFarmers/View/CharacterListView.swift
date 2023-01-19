@@ -27,7 +27,7 @@ struct CharacterListView: View {
                 LazyVGrid (columns: columns) {
                     ForEach(gamerSession.connectedPeers, id: \.self) { peer in
                         HStack {
-                            if !setCards.isEmpty{
+                            if !setCards.isEmpty {
                                 setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
                             }
                             Spacer()
@@ -41,7 +41,13 @@ struct CharacterListView: View {
                                 }
                             }
                             .onAppear {
-                                cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, image: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image , username: peer.displayName, isDeath: false))
+                                cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
+                                
+//                                let tupla = gamerSession.send(card: Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false), username: peer.displayName, isMaster: true)
+                                
+//                                cardModel.isMaster = tupla.0
+//
+//                                cardModel.cardReceived = tupla.1
 
                                 //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
 
@@ -61,9 +67,9 @@ struct CharacterListView: View {
             }
             .scrollDisabled(true)
             
-            NavigationLink(destination: NightTimeView(), isActive: $cardModel.isStarted) {
+            NavigationLink(destination: NightTimeView(setCards: $setCards), isActive: $cardModel.isStarted) {
                 Button (action: {
-                    cardModel.isMaster = gamerSession.send(isMaster: true)
+//                    cardModel.isMaster = gamerSession.send(isMaster: true)
                     cardModel.isStarted.toggle()
                 }, label: {
                     BigButtonView(text: "Start game", textColor: .black, backgroundColor: .yellowButton)
@@ -84,6 +90,7 @@ struct CharacterListView: View {
                 setCards = cardModel.deck.shuffled()
                 
             }
+            
         }
     }
 }
