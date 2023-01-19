@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct WolvesFarmersApp: App {
     @StateObject var gamerSession = GamerMultiPeerSession()
+    
     @StateObject var cardModel = CardViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
@@ -17,7 +18,12 @@ struct WolvesFarmersApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(gamerSession)
-                .environmentObject(cardModel)
+                .environmentObject(cardModel).onAppear(){
+                    saveUsername()
+                }
         }
+    }
+    func saveUsername(){
+        cardModel.username = gamerSession.myPeerId.displayName
     }
 }
