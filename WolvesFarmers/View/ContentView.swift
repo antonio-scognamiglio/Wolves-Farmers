@@ -50,7 +50,6 @@ struct ContentView: View {
                             .background(Color(UIColor(named: "ChevronColor")!))
                             .cornerRadius(12)
                         
-                        
                     }
                     
                     NavigationLink(destination: PlayerGameStartedView()) {
@@ -73,8 +72,10 @@ struct ContentView: View {
                     
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
-//        }.navigationViewStyle(.stack)
+        
+        //        }.navigationViewStyle(.stack)
         .fullScreenCover(isPresented: $showOnboarding){
             OnBoardingView()
         }

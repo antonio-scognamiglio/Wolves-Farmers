@@ -11,6 +11,9 @@ struct NightTimeView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @Binding var setCards: [Card]
+    @Environment(\.dismiss) var dismiss
+    
+    @Binding var dismissAll: Bool
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
@@ -41,43 +44,63 @@ struct NightTimeView: View {
                 ScrollView {
                     LazyVGrid (columns: columns) {
                         ForEach(gamerSession.connectedPeers, id: \.self) { peer in
-                            HStack {
-                                if !setCards.isEmpty {
-                                    setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
-                                }
-                                Spacer()
-                                VStack(alignment: .leading) {
-                                    Text(peer.displayName)
-                                        .foregroundColor(.black)
+                            
+                            Button(action: {
+                                setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath.toggle()
+                            }, label: {
+                                HStack {
                                     if !setCards.isEmpty {
-                                        Text(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name)
-                                            .fontWeight(.semibold)
+                                        setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
+                                    }
+                                    Spacer()
+                                    VStack(alignment: .leading) {
+                                        Text(peer.displayName)
                                             .foregroundColor(.black)
+                                        if !setCards.isEmpty {
+                                            Text(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name)
+                                                .fontWeight(.semibold)
+                                                .foregroundColor(.black)
+                                        }
+                                    }
+                                    .onAppear {
+                                        cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
+
+                                        //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
+
+                                        //                                    print("Cards: \(cardModel.cards)")
+                                    }
+                                    .frame(width: 80, alignment: .leading)
+                                }
+                                .overlay {
+                                    if (setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath) {
+                                        Image(systemName: "xmark")
+                                            .foregroundColor(.red)
+                                            .font(.system(size: 100))
                                     }
                                 }
-                                .onAppear {
-                                    cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
-
-                                    //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
-
-                                    //                                    print("Cards: \(cardModel.cards)")
+                                .padding()
+                                .background {
+                                    RoundedRectangle(cornerRadius: 15)
+                                        .fill(.white)
                                 }
-                                .frame(width: 80, alignment: .leading)
-                            }
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .fill(.white)
-                            }
-                            .padding(4)
+                                .padding(4)
+                            })
+                            
+                            
                         }
                     }
                     .padding()
                 }
                 .scrollDisabled(true)
                 
-                NavigationLink(destination: MorningTimeView(setCards: $setCards)) {
+                NavigationLink(destination: MorningTimeView(setCards: $setCards, dismissAll: $dismissAll)) {
                     BigButtonView(text: "Switch to Morning", textColor: .black, backgroundColor: .yellowButton)
+                        .onChange(of: dismissAll) { _ in
+                            if (dismissAll == true) {
+                                dismiss()
+                            }
+                            
+                        }
                 }
                 
             }
