@@ -11,6 +11,8 @@ struct CharacterListView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @State var setCards = [Card]()
+    @Environment(\.dismiss) var dismiss
+    @Binding var dismissAll: Bool
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
@@ -67,12 +69,18 @@ struct CharacterListView: View {
             }
             .scrollDisabled(true)
             
-            NavigationLink(destination: NightTimeView(setCards: $setCards), isActive: $cardModel.isStarted) {
+            NavigationLink(destination: NightTimeView(setCards: $setCards, dismissAll: $dismissAll), isActive: $cardModel.isStarted) {
                 Button (action: {
 //                    cardModel.isMaster = gamerSession.send(isMaster: true)
                     cardModel.isStarted.toggle()
                 }, label: {
                     BigButtonView(text: "Start game", textColor: .black, backgroundColor: .yellowButton)
+                        .onChange(of: dismissAll) { _ in
+                            if (dismissAll == true) {
+                                dismiss()
+                            }
+                            
+                        }
                 })
                 
             }
@@ -97,7 +105,7 @@ struct CharacterListView: View {
 
 struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterListView()
+        CharacterListView(dismissAll: .constant(true))
             .environmentObject(GamerMultiPeerSession())
             .environmentObject(CardViewModel())
     }

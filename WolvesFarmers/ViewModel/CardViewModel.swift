@@ -111,6 +111,12 @@ class CardViewModel: ObservableObject {
         
     }
     
+    func reset () {
+        DispatchQueue.main.async {
+            self.cards.removeAll()
+        }
+    }
+    
 //    func resetVotation(at offsets: IndexSet) {
 //        offsets.forEach { i in
 //            cards[i].votes = 0
