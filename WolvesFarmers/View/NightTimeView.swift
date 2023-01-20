@@ -64,9 +64,9 @@ struct NightTimeView: View {
                                     }
                                     .onAppear {
                                         cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
-
+                                        
                                         //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
-
+                                        
                                         //                                    print("Cards: \(cardModel.cards)")
                                     }
                                     .frame(width: 80, alignment: .leading)
@@ -110,8 +110,8 @@ struct NightTimeView: View {
             }
         }.onAppear {
             print("CARDDD: \(cardModel.cards)")
-//            let tupla = gamerSession.send(cards: cardModel.cards, isMaster: false)
-//            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
+            //            let tupla = gamerSession.send(cards: cardModel.cards, isMaster: false)
+            //            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
             cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: false).1
         }
     }
