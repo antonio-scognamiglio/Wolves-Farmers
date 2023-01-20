@@ -31,6 +31,10 @@ struct CardView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200)
+                        Text("")
+                            .foregroundColor(.yellowButton)
+                            .fontWeight(.bold)
+                            .font(.system(size: 38, design: .monospaced))
                     } else {
                     cardImage
                         .resizable()
