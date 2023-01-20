@@ -11,9 +11,6 @@ struct NightTimeView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @Binding var setCards: [Card]
-    @Environment(\.dismiss) var dismiss
-    
-    @Binding var dismissAll: Bool
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
@@ -93,14 +90,8 @@ struct NightTimeView: View {
                 }
                 .scrollDisabled(true)
                 
-                NavigationLink(destination: MorningTimeView(setCards: $setCards, dismissAll: $dismissAll)) {
+                NavigationLink(destination: MorningTimeView(setCards: $setCards)) {
                     BigButtonView(text: "Switch to Morning", textColor: .black, backgroundColor: .yellowButton)
-                        .onChange(of: dismissAll) { _ in
-                            if (dismissAll == true) {
-                                dismiss()
-                            }
-                            
-                        }
                 }
                 
             }
@@ -117,8 +108,16 @@ struct NightTimeView: View {
     }
 }
 
-//struct NightTimeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NightTimeView(setCard: .init())
-//    }
-//}
+struct NightTimeView_Previews: PreviewProvider {
+    static var previews: some View {
+        NightTimeView(setCards: .constant([
+            Card(name: "Wolf", imageName: "WolfGameOver"),
+            Card(name: "Seer", imageName: "Seer"),
+            Card(name: "Guardian", imageName: "Guardian"),
+            Card(name: "Farmer", imageName: "Farmer"),
+            Card(name: "Farmer", imageName: "Farmer"),
+            Card(name: "Farmer", imageName: "Farmer")]))
+        .environmentObject(GamerMultiPeerSession())
+        .environmentObject(CardViewModel())
+    }
+}

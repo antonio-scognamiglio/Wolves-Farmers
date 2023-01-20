@@ -10,8 +10,6 @@ import SwiftUI
 struct CreateGameView: View {
     @EnvironmentObject var gamerSession : GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
-    @State var dismissAll = false
-    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -34,15 +32,9 @@ struct CreateGameView: View {
                         }
                     }
 
-                NavigationLink(destination: SearchingPlayersView(dismissAll: $dismissAll)) {
+                NavigationLink(destination: SearchingPlayersView()) {
                     BigButtonView(text: "Understand", textColor: .black, backgroundColor: .yellowButton)
                         .padding(.vertical)
-                        .onChange(of: dismissAll) { _ in
-                            if (dismissAll == true) {
-                                dismiss()
-                            }
-                            
-                        }
                 }
 
             }

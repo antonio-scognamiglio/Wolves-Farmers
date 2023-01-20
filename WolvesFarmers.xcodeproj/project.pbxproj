@@ -27,6 +27,8 @@
 		50D5F1482976B0EC00851756 /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F1472976B0EC00851756 /* Extension-Color.swift */; };
 		50D5F14A2976B33E00851756 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F1492976B33E00851756 /* HeaderView.swift */; };
 		50D5F14C2976B39000851756 /* RoleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5F14B2976B39000851756 /* RoleCardView.swift */; };
+		7151F32B297A84BB0033AA23 /* DayNightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151F32A297A84BB0033AA23 /* DayNightView.swift */; };
+		7151F32D297A93660033AA23 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151F32C297A93660033AA23 /* NavigationUtil.swift */; };
 		7197905429755E0700232432 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905329755E0700232432 /* Assets.xcassets */; };
 		7197905729755E0700232432 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7197905629755E0700232432 /* Preview Assets.xcassets */; };
 		71D4F43F29769C2100A7D7C7 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D4F43E29769C2100A7D7C7 /* Players.swift */; };
@@ -63,6 +65,8 @@
 		50D5F1472976B0EC00851756 /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		50D5F1492976B33E00851756 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		50D5F14B2976B39000851756 /* RoleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCardView.swift; sourceTree = "<group>"; };
+		7151F32A297A84BB0033AA23 /* DayNightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNightView.swift; sourceTree = "<group>"; };
+		7151F32C297A93660033AA23 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		7197904C29755E0600232432 /* WolvesFarmers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WolvesFarmers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7197905329755E0700232432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7197905629755E0700232432 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
 				3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */,
 				3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */,
+				7151F32A297A84BB0033AA23 /* DayNightView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				3EC7663F2976905800D89285 /* AppDelegate.swift */,
 				3EC76647297690A900D89285 /* WolvesFarmersApp.swift */,
+				7151F32C297A93660033AA23 /* NavigationUtil.swift */,
 				3EC7663D2976905000D89285 /* GamerMultiPeerSession.swift */,
 				3EC7664A29769BEF00D89285 /* Model */,
 				3EC76649297690F000D89285 /* View */,
@@ -272,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7151F32B297A84BB0033AA23 /* DayNightView.swift in Sources */,
 				5078B4322977EDE400DA8B65 /* CreateGameView.swift in Sources */,
 				50D5F1462976AFEF00851756 /* PickSideView.swift in Sources */,
 				5078B4342977F5B400DA8B65 /* EndGameView.swift in Sources */,
@@ -297,6 +304,7 @@
 				D98CE7D1297818B9009CE94D /* GameRulesCard.swift in Sources */,
 				71D4F4452977EC9500A7D7C7 /* CharacterListView.swift in Sources */,
 				3EC76648297690A900D89285 /* WolvesFarmersApp.swift in Sources */,
+				7151F32D297A93660033AA23 /* NavigationUtil.swift in Sources */,
 				3EC766422976905D00D89285 /* GameView.swift in Sources */,
 				71D4F451297949FF00A7D7C7 /* CardView.swift in Sources */,
 				3EC7664F29769D5E00D89285 /* CardViewModel.swift in Sources */,
