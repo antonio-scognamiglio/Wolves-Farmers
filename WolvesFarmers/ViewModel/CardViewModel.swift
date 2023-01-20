@@ -21,6 +21,7 @@ class CardViewModel: ObservableObject {
     
     @Published var numberOfPlayer: NumberOfPlayers = .six
     
+    @Published var setCards = [Card]()
     
     var deck: [Card] {
         

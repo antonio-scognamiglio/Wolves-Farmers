@@ -10,7 +10,6 @@ import SwiftUI
 struct CharacterListView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
-    @State var setCards = [Card]()
     
     let columns = [
         GridItem(.fixed(180)),
@@ -27,22 +26,22 @@ struct CharacterListView: View {
                 LazyVGrid (columns: columns) {
                     ForEach(gamerSession.connectedPeers, id: \.self) { peer in
                         HStack {
-                            if !setCards.isEmpty {
-                                setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
+                            if !cardModel.setCards.isEmpty {
+                                cardModel.setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
                             }
                             Spacer()
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(peer.displayName)
                                     .foregroundColor(.black)
                                     
-                                if !setCards.isEmpty {
-                                    Text(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name)
+                                if !cardModel.setCards.isEmpty {
+                                    Text(cardModel.setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name)
                                         .fontWeight(.semibold)
                                         .foregroundColor(.black)
                                 }
                             }
                             .onAppear {
-                                cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
+                                cardModel.cards.append(Card(name: cardModel.setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: cardModel.setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
                                 
 //                                let tupla = gamerSession.send(card: Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false), username: peer.displayName, isMaster: true)
                                 
@@ -69,7 +68,7 @@ struct CharacterListView: View {
             }
             .scrollDisabled(true)
             
-            NavigationLink(destination: DayNightView(setCards: $setCards), isActive: $cardModel.isStarted) {
+            NavigationLink(destination: DayNightView(), isActive: $cardModel.isStarted) {
                 Button (action: {
 //                    cardModel.isMaster = gamerSession.send(isMaster: true)
                     cardModel.isStarted.toggle()
@@ -89,7 +88,7 @@ struct CharacterListView: View {
 
             for value in NumberOfPlayers.allCases {
                 cardModel.numberOfPlayer = value
-                setCards = cardModel.deck.shuffled()
+                cardModel.setCards = cardModel.deck.shuffled()
                 
             }
             
