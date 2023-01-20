@@ -108,6 +108,7 @@ class CardViewModel: ObservableObject {
     func decoded(cards: [Card]) {
         DispatchQueue.main.async {
             self.cards = cards
+            print(cards)
         }
         
     }

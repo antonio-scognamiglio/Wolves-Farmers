@@ -59,7 +59,7 @@ struct PlayerGameStartedView: View {
         print("CARDMODEL: \(cardModel.cards)")
         
         
-        return cardModel.cards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "")
+        return cardModel.setCards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "")
     }
     
 }

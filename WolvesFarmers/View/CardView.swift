@@ -11,7 +11,6 @@ struct CardView: View {
     @State var cardImage: Image
     @State var cardName: String
     @Binding var isHidden: Bool
-    // Qui bisogna collegare il model e far vedere solo la carta assegnata allo specifico device
     @EnvironmentObject var cardModel: CardViewModel
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
   
@@ -58,9 +57,17 @@ struct CardView: View {
         }
     func findIndex() -> Card {
         var card: Card
+        
+        
+        
 //        for peer in gamerSession.connectedPeers {
 //            card = cardModel.setCards[gamerSession.connectedPeers.firstIndex(of: peer)!]
-            card = cardModel.cards.first(where: {$0.username == cardModel.username}) ?? cardModel.cards[0]
+       
+//        card = cardModel.setCards.first(where: {$0.username == cardModel.username}) ?? cardModel.deck.first!
+        card = cardModel.setCards.first(where: {$0.username == gamerSession.myPeerId.displayName}) ?? cardModel.deck.first!
+        print("*********Confronto**************")
+        print(cardModel.username)
+        print(card.username)
 //    }
        return card
 }

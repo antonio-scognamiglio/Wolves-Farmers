@@ -161,6 +161,7 @@ extension GamerMultiPeerSession: MCSessionDelegate {
         
         if let decodedCards = try? JSONDecoder().decode([Card].self, from: data) as [Card] {
             viewModel?.decoded(cards: decodedCards)
+            
         } else {
             // Qui è quale
             print(String(data: data, encoding: .utf8))
