@@ -45,6 +45,7 @@ struct PlayerGameStartedView: View {
                         // More actions to come
                     } label: {
                         BigButtonView(text: "Flip Card", textColor: .black, backgroundColor: .yellowButton)
+                            .padding()
                     }
                 }
             }
