@@ -1,44 +1,68 @@
 //
-//  NightTimeView.swift
+//  DayNightView.swift
 //  WolvesFarmers
 //
-//  Created by Simona Ettari on 18/01/23.
+//  Created by Antonio Scognamiglio on 20/01/23.
 //
 
 import SwiftUI
 
-struct NightTimeView: View {
+struct DayNightView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @Binding var setCards: [Card]
     @Environment(\.dismiss) var dismiss
-    
+    @State var active = false
     @Binding var dismissAll: Bool
+    @State var isDay = true
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
         GridItem(.flexible(minimum: 140, maximum: 180))
     ]
     let characters: [String] = ["Wolf", "Seer", "Guardian", "Farmer", "Zorro", "Pepp"]
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
-                Image(systemName: "moon.fill")
-                    .foregroundColor(.textYellow)
-                    .font(.system(size: 50))
-                    .padding(.bottom, 5)
-                
-                Text("Night Time")
-                    .foregroundColor(.white)
-                    .font(.system(size: 25))
-                    .bold()
-                    .padding(.bottom, 10)
-                
-                Text("The night is coming, you might not survive.. ")
-                    .multilineTextAlignment(.center)
-                    .frame(width: UIScreen.main.bounds.width / 1.30)
-                    .foregroundColor(.textYellow)
-                    .font(.system(size: 18))
+                // Day
+                if isDay {
+                    Image(systemName: "sun.and.horizon")
+                        .foregroundColor(.textYellow)
+                        .font(.system(size: 50))
+                        .padding(.bottom, 5)
+                    
+                    Text("Morning Time")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                        .bold()
+                        .padding(.bottom, 10)
+                    
+                    Text("Good morning, the town hall is waiting for you")
+                        .multilineTextAlignment(.center)
+                        .frame(width: UIScreen.main.bounds.width / 1.30)
+                        .foregroundColor(.textYellow)
+                        .font(.system(size: 18))
+                } else
+                // Night
+                {
+                    Image(systemName: "moon.fill")
+                        .foregroundColor(.textYellow)
+                        .font(.system(size: 41))
+                        .padding(.bottom, 5)
+                    
+                    Text("Night Time")
+                        .foregroundColor(.white)
+                        .font(.system(size: 25))
+                        .bold()
+                        .padding(.bottom, 10)
+                    
+                    Text("The night is coming, you might not survive.. ")
+                        .multilineTextAlignment(.center)
+                        .frame(width: UIScreen.main.bounds.width / 1.30)
+                        .foregroundColor(.textYellow)
+                        .font(.system(size: 18))
+                }
                 
                 
                 ScrollView {
@@ -47,6 +71,7 @@ struct NightTimeView: View {
                             
                             Button(action: {
                                 setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath.toggle()
+                                print("SO MORTO \(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath)")
                             }, label: {
                                 HStack {
                                     if !setCards.isEmpty {
@@ -86,47 +111,57 @@ struct NightTimeView: View {
                                 .padding(4)
                             })
                             
-                            
                         }
                     }
                     .padding()
                 }
                 .scrollDisabled(true)
                 
-                NavigationLink(destination: MorningTimeView(setCards: $setCards, dismissAll: $dismissAll)) {
-                    BigButtonView(text: "Switch to Morning", textColor: .black, backgroundColor: .yellowButton)
-                        .onChange(of: dismissAll) { _ in
-                            if (dismissAll == true) {
-                                dismiss()
-                            }
-                            
-                        }
+                
+                Button {
+                    isDay.toggle()
+                } label: {
+                    BigButtonView(text: isDay ? "Switch to Night" : "Switch to Day", textColor: .black, backgroundColor: .yellowButton)
+                        .padding()
                 }
+                   
+                
+                    Button(action: {
+                        cardModel.reset()
+                        active = true
+                        dismissAll = true
+                    }, label: {
+                        BigButtonView(text: "End the Game", textColor: .red, borderColor: .red, backgroundColor: .clear)
+                            .opacity(isDay ? 1 : 0)
+                            .disabled(!isDay)
+                            .animation(.linear, value: isDay)
+                    })
+                
                 
             }
             .background {
-                Color.backgroundColorDark
-                    .ignoresSafeArea()
+                if isDay {
+                    Color.backgroundColor
+                        .ignoresSafeArea()
+                } else {
+                    Color.backgroundColorDark
+                        .ignoresSafeArea()
+                }
             }
-        }.onAppear {
-            print("CARDDD: \(cardModel.cards)")
-//            let tupla = gamerSession.send(cards: cardModel.cards, isMaster: false)
-//            cardModel.isMaster = gamerSession.send(cards: cardModel.cards, isMaster: true).0
-            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: false).1
+            .animation(.linear(duration: 0.7), value: isDay)
         }
     }
 }
 
-struct NightTimeView_Previews: PreviewProvider {
+struct DayNightView_Previews: PreviewProvider {
     static var previews: some View {
-        NightTimeView(setCards: .constant([
-            Card(name: "Wolf", imageName: "WolfGameOver"),
-            Card(name: "Seer", imageName: "Seer"),
-            Card(name: "Guardian", imageName: "Guardian"),
-            Card(name: "Farmer", imageName: "Farmer"),
-            Card(name: "Farmer", imageName: "Farmer"),
-            Card(name: "Farmer", imageName: "Farmer")]), dismissAll: .constant(false))
-        .environmentObject(GamerMultiPeerSession())
-        .environmentObject(CardViewModel())
+        DayNightView(setCards: .constant([Card(name: "Wolf", imageName: "WolfGameOver"),
+                                          Card(name: "Seer", imageName: "Seer"),
+                                          Card(name: "Guardian", imageName: "Guardian"),
+                                          Card(name: "Farmer", imageName: "Farmer"),
+                                          Card(name: "Farmer", imageName: "Farmer"),
+                                          Card(name: "Farmer", imageName: "Farmer")]), dismissAll: .constant(false))
+            .environmentObject(GamerMultiPeerSession())
+            .environmentObject(CardViewModel())
     }
 }

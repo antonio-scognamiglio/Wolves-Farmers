@@ -69,7 +69,7 @@ struct CharacterListView: View {
             }
             .scrollDisabled(true)
             
-            NavigationLink(destination: NightTimeView(setCards: $setCards, dismissAll: $dismissAll), isActive: $cardModel.isStarted) {
+            NavigationLink(destination: DayNightView(setCards: $setCards, dismissAll: $dismissAll), isActive: $cardModel.isStarted) {
                 Button (action: {
 //                    cardModel.isMaster = gamerSession.send(isMaster: true)
                     cardModel.isStarted.toggle()

@@ -130,8 +130,17 @@ struct MorningTimeView: View {
     }
 }
 
-//struct MorningTimeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MorningTimeView()
-//    }
-//}
+
+struct MorningTimeView_Previews: PreviewProvider {
+    static var previews: some View {
+        MorningTimeView(setCards: .constant([
+            Card(name: "Wolf", imageName: "WolfGameOver"),
+            Card(name: "Seer", imageName: "Seer"),
+            Card(name: "Guardian", imageName: "Guardian"),
+            Card(name: "Farmer", imageName: "Farmer"),
+            Card(name: "Farmer", imageName: "Farmer"),
+            Card(name: "Farmer", imageName: "Farmer")]), dismissAll: .constant(false))
+        .environmentObject(GamerMultiPeerSession())
+        .environmentObject(CardViewModel())
+    }
+}
