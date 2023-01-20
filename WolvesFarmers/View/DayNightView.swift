@@ -11,9 +11,6 @@ struct DayNightView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
     @Binding var setCards: [Card]
-    @Environment(\.dismiss) var dismiss
-    @State var active = false
-    @Binding var dismissAll: Bool
     @State var isDay = true
     
     let columns = [
@@ -128,8 +125,7 @@ struct DayNightView: View {
                 
                     Button(action: {
                         cardModel.reset()
-                        active = true
-                        dismissAll = true
+                        NavigationUtil.popToRootView()
                     }, label: {
                         BigButtonView(text: "End the Game", textColor: .red, borderColor: .red, backgroundColor: .clear)
                             .opacity(isDay ? 1 : 0)
@@ -151,6 +147,7 @@ struct DayNightView: View {
             .animation(.linear(duration: 0.7), value: isDay)
         }
     }
+    
 }
 
 struct DayNightView_Previews: PreviewProvider {
@@ -160,7 +157,7 @@ struct DayNightView_Previews: PreviewProvider {
                                           Card(name: "Guardian", imageName: "Guardian"),
                                           Card(name: "Farmer", imageName: "Farmer"),
                                           Card(name: "Farmer", imageName: "Farmer"),
-                                          Card(name: "Farmer", imageName: "Farmer")]), dismissAll: .constant(false))
+                                          Card(name: "Farmer", imageName: "Farmer")]))
             .environmentObject(GamerMultiPeerSession())
             .environmentObject(CardViewModel())
     }
