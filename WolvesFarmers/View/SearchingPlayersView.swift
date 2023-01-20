@@ -10,8 +10,6 @@ import SwiftUI
 struct SearchingPlayersView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
-    @Environment(\.dismiss) var dismiss
-    @Binding var dismissAll: Bool
     
     var body: some View {
         ZStack {
@@ -48,15 +46,9 @@ struct SearchingPlayersView: View {
                     SearchingCardView()
                 }
                 
-                NavigationLink(destination: CharacterListView(dismissAll: $dismissAll)) {
+                NavigationLink(destination: CharacterListView()) {
                     BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
                         .padding(.top, 30)
-                        .onChange(of: dismissAll) { _ in
-                            if (dismissAll == true) {
-                                dismiss()
-                            }
-                            
-                        }
                 }
                 
             }
@@ -66,7 +58,7 @@ struct SearchingPlayersView: View {
 
 struct SearchingPlayersView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchingPlayersView(gamerSession: .init(), dismissAll: .constant(true))
+        SearchingPlayersView(gamerSession: .init())
             .environmentObject(CardViewModel())
             .environmentObject(GamerMultiPeerSession())
     }
