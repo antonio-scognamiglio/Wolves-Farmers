@@ -28,13 +28,13 @@ struct PlayerGameStartedView: View {
                     }
                     .foregroundColor(.white)
                     
-                    HStack {
-                        Image(systemName: "questionmark.circle")
-                            .foregroundColor(.yellow)
-                        Text("Tap here to show what your character can do")
-                            .foregroundColor(.white)
-                    }
-                    .frame(width: geo.size.width * 0.95)
+//                    HStack {
+//                        Image(systemName: "questionmark.circle")
+//                            .foregroundColor(.yellow)
+//                        Text("Tap here to show what your character can do")
+//                            .foregroundColor(.white)
+//                    }
+//                    .frame(width: geo.size.width * 0.95)
                     
                     CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isFlipped)
                     Button {
@@ -66,5 +66,7 @@ struct PlayerGameStartedView: View {
 struct PlayerGameStartedView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerGameStartedView()
+            .environmentObject(GamerMultiPeerSession())
+            .environmentObject(CardViewModel())
     }
 }
