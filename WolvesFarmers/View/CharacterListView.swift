@@ -23,6 +23,7 @@ struct CharacterListView: View {
         
         VStack {
             HeaderView(title: "Step 3/3", subtitle: "Character List")
+                .padding(.vertical)
             ScrollView {
                 LazyVGrid (columns: columns) {
                     ForEach(gamerSession.connectedPeers, id: \.self) { peer in
@@ -75,6 +76,7 @@ struct CharacterListView: View {
                     cardModel.isStarted.toggle()
                 }, label: {
                     BigButtonView(text: "Start game", textColor: .black, backgroundColor: .yellowButton)
+                        .padding(.bottom, 10)
                 })
                 
             }

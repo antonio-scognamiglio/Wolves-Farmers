@@ -24,7 +24,7 @@ struct BigButtonView: View {
                     .fill(backgroundColor)
                     .background {
                         RoundedRectangle(cornerRadius: 15)
-                            .stroke(borderColor, lineWidth: 5)
+                            .stroke(borderColor, lineWidth: 1)
                     }
             }
     }

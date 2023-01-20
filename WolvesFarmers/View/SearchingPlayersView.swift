@@ -17,6 +17,7 @@ struct SearchingPlayersView: View {
                 .ignoresSafeArea()
             VStack {
                 HeaderView(title: "Step 2/3", subtitle: "Searching for players...")
+                    .padding(.bottom, 50)
                 
                 HStack {
                     Image(systemName: "exclamationmark.circle")
@@ -48,7 +49,7 @@ struct SearchingPlayersView: View {
                 
                 NavigationLink(destination: CharacterListView()) {
                     BigButtonView(text: "Next", textColor: .black, backgroundColor: .yellowButton)
-                        .padding(.top, 30)
+                        .padding(.top, 40)
                 }
                 
             }

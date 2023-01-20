@@ -17,7 +17,7 @@ struct CreateGameView: View {
                 .ignoresSafeArea()
             VStack {
                 HeaderView(title: "Step 1/3", subtitle: "Creating a new game")
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 100)
             SearchingCardView()
                     .overlay {
                         VStack {
@@ -34,7 +34,7 @@ struct CreateGameView: View {
 
                 NavigationLink(destination: SearchingPlayersView()) {
                     BigButtonView(text: "Understand", textColor: .black, backgroundColor: .yellowButton)
-                        .padding(.vertical)
+                        .padding(.top, 40)
                 }
 
             }

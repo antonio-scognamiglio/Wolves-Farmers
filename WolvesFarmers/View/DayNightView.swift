@@ -131,6 +131,7 @@ struct DayNightView: View {
                             .opacity(isDay ? 1 : 0)
                             .disabled(!isDay)
                             .animation(.linear, value: isDay)
+                            .padding(.bottom, 10)
                     })
                 
                 
@@ -145,6 +146,9 @@ struct DayNightView: View {
                 }
             }
             .animation(.linear(duration: 0.7), value: isDay)
+        }.onAppear {
+            print("CARDDD: \(cardModel.cards)")
+            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: false).1
         }
     }
     
