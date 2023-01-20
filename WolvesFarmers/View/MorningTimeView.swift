@@ -10,12 +10,7 @@ import SwiftUI
 struct MorningTimeView: View {
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
     @EnvironmentObject var cardModel: CardViewModel
-    @Environment(\.dismiss) var dismiss
     @Binding var setCards: [Card]
-    
-    @Binding var dismissAll: Bool
-    
-    @State var active = false
     
     let columns = [
         GridItem(.flexible(minimum: 140, maximum: 180)),
@@ -95,32 +90,19 @@ struct MorningTimeView: View {
                 }
                 .scrollDisabled(true)
                 
-                NavigationLink(destination: NightTimeView(setCards: $setCards, dismissAll: $dismissAll)) {
+                NavigationLink(destination: NightTimeView(setCards: $setCards)) {
                     BigButtonView(text: "Switch to Night", textColor: .black, backgroundColor: .yellowButton)
                 }
                 
-                NavigationLink(destination: ContentView(), isActive: $active)  {
+                NavigationLink(destination: ContentView())  {
                     Button(action: {
                         cardModel.reset()
-                        active = true
                     }, label: {
                         BigButtonView(text: "End the Game", textColor: .red, borderColor: .red, backgroundColor: .clear)
                     })
                     
                         
                 }
-                
-//                Button(action: {
-//                    cardModel.reset()
-//                    dismissAll = true
-//                    dismiss()
-//
-//                }, label: {
-//                    BigButtonView(text: "End the Game", textColor: .red, borderColor: .red, backgroundColor: .clear)
-//                })
-                
-                
-                
             }
             .background {
                 Color.backgroundColor
@@ -139,7 +121,7 @@ struct MorningTimeView_Previews: PreviewProvider {
             Card(name: "Guardian", imageName: "Guardian"),
             Card(name: "Farmer", imageName: "Farmer"),
             Card(name: "Farmer", imageName: "Farmer"),
-            Card(name: "Farmer", imageName: "Farmer")]), dismissAll: .constant(false))
+            Card(name: "Farmer", imageName: "Farmer")]))
         .environmentObject(GamerMultiPeerSession())
         .environmentObject(CardViewModel())
     }
