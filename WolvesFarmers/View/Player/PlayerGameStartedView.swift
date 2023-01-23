@@ -38,7 +38,7 @@ struct PlayerGameStartedView: View {
                     
                     CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isFlipped)
                     Button {
-                        print ("Is master: \(cardModel.isMaster)")
+//                        print ("Is master: \(cardModel.isMaster)")
 //                        if cardModel.isMaster {
                         isFlipped.toggle()
 //                        }
@@ -47,21 +47,22 @@ struct PlayerGameStartedView: View {
                         BigButtonView(text: "Flip Card", textColor: .black, backgroundColor: .yellowButton)
                             .padding()
                     }
+                    
+                    if (cardModel.isDied) {
+                        Text("SO MORTO").font(.title).foregroundColor(.red)
+                    }
+                    
                 }
             }
         }.onAppear() {
-            print(gameModel.isMaster)
-            cardModel.isMaster = gameModel.isMaster
+            print("Provo CARD: \(cardModel.isDied)")
         }
     }
     public func showCard() -> Card {
-        
         print("CARDMODEL: \(cardModel.cards)")
-        
-        
         return cardModel.cards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "")
     }
-    
+      
 }
 
 struct PlayerGameStartedView_Previews: PreviewProvider {

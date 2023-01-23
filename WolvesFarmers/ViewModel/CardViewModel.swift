@@ -16,7 +16,7 @@ class CardViewModel: ObservableObject {
     @Published var username = ""
     @Published var isMaster = false
     @Published var isStarted = false
-    @Published var isPlayer = false
+    @Published var isDied = false
     @Published var nameCard = ""
     
     @Published var numberOfPlayer: NumberOfPlayers = .six
