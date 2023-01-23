@@ -27,13 +27,13 @@ struct GameView: View {
                     .fill(colors[gamerSession.connectedPeers.firstIndex(of: value)!])
                     .frame(width: 40, height: 40)
             }
-        }.onAppear(){
-            mammt()
+        }.onAppear() {
+            assignCard()
         }
         .padding()
     }
     
-    public func mammt(){
+    public func assignCard() {
         print("OK \(cardModel.username)")
         for x in cardModel.cards {
             print("Print cose\(x.username)")

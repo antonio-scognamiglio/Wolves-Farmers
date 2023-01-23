@@ -94,28 +94,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3EC76649297690F000D89285 /* View */ = {
+		3EB7E5FC297EA95B009E8045 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				71D4F44E29786E3E00A7D7C7 /* OnBoarding */,
-				71D4F44F29786EB700A7D7C7 /* Components */,
+				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
+				71D4F450297949FF00A7D7C7 /* CardView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		3EB7E5FD297EA96C009E8045 /* StoryTeller */ = {
+			isa = PBXGroup;
+			children = (
 				3EC766432976906B00D89285 /* ContentView.swift */,
-				D98CE7BB29769B25009CE94D /* AddNickname.swift */,
-				3EC766412976905D00D89285 /* GameView.swift */,
-				D98CE7CA2977EE34009CE94D /* FirstView.swift */,
-				D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */,
-				3EC766512976A2C100D89285 /* CardInfoView.swift */,
 				5078B4312977EDE400DA8B65 /* CreateGameView.swift */,
 				50CC600F2977273100258B1A /* SearchingPlayersView.swift */,
 				71D4F4442977EC9500A7D7C7 /* CharacterListView.swift */,
+				7151F32A297A84BB0033AA23 /* DayNightView.swift */,
 				5078B4332977F5B400DA8B65 /* EndGameView.swift */,
-				50D5F1452976AFEF00851756 /* PickSideView.swift */,
-				71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */,
-				71D4F450297949FF00A7D7C7 /* CardView.swift */,
-				71D4F4482978085100A7D7C7 /* PlayerGameStartedView.swift */,
+			);
+			path = StoryTeller;
+			sourceTree = "<group>";
+		};
+		3EB7E5FE297EA980009E8045 /* OldView */ = {
+			isa = PBXGroup;
+			children = (
+				D98CE7BB29769B25009CE94D /* AddNickname.swift */,
+				3EC766412976905D00D89285 /* GameView.swift */,
+				D98CE7CA2977EE34009CE94D /* FirstView.swift */,
 				3EF3AC0029782F9200EDC9FE /* NightTimeView.swift */,
 				3EF3AC0229782F9F00EDC9FE /* MorningTimeView.swift */,
-				7151F32A297A84BB0033AA23 /* DayNightView.swift */,
+				50D5F1452976AFEF00851756 /* PickSideView.swift */,
+				71D4F446297805F300A7D7C7 /* CharacterAssignedView.swift */,
+				3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */,
+			);
+			path = OldView;
+			sourceTree = "<group>";
+		};
+		3EB7E5FF297EA9EE009E8045 /* GameInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D98CE7CC2977FA1C009CE94D /* GameRulesView.swift */,
+				3EC766512976A2C100D89285 /* CardInfoView.swift */,
+			);
+			path = GameInfo;
+			sourceTree = "<group>";
+		};
+		3EC76649297690F000D89285 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EB7E5FD297EA96C009E8045 /* StoryTeller */,
+				3EB7E5FC297EA95B009E8045 /* Player */,
+				3EB7E5FF297EA9EE009E8045 /* GameInfo */,
+				71D4F44E29786E3E00A7D7C7 /* OnBoarding */,
+				71D4F44F29786EB700A7D7C7 /* Components */,
+				3EB7E5FE297EA980009E8045 /* OldView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC7664E29769D5E00D89285 /* CardViewModel.swift */,
+				3EC7663D2976905000D89285 /* GamerMultiPeerSession.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -139,9 +173,10 @@
 		3EC766532976A2C600D89285 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3EC7663F2976905800D89285 /* AppDelegate.swift */,
 				71D4F43E29769C2100A7D7C7 /* Players.swift */,
-				3EE0FC1D29772E3C00BC4277 /* CustomTextField.swift */,
 				50D5F1472976B0EC00851756 /* Extension-Color.swift */,
+				7151F32C297A93660033AA23 /* NavigationUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -165,10 +200,7 @@
 		7197904E29755E0600232432 /* WolvesFarmers */ = {
 			isa = PBXGroup;
 			children = (
-				3EC7663F2976905800D89285 /* AppDelegate.swift */,
 				3EC76647297690A900D89285 /* WolvesFarmersApp.swift */,
-				7151F32C297A93660033AA23 /* NavigationUtil.swift */,
-				3EC7663D2976905000D89285 /* GamerMultiPeerSession.swift */,
 				3EC7664A29769BEF00D89285 /* Model */,
 				3EC76649297690F000D89285 /* View */,
 				3EC7664D29769D4400D89285 /* ViewModel */,

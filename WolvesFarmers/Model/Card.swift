@@ -15,6 +15,7 @@ struct Card: Identifiable, Codable, Equatable {
     var imageName: String
     var username: String = ""
     var isDeath: Bool = false
+    var info: [String] = []
     
     var image: Image {
         Image(imageName)
