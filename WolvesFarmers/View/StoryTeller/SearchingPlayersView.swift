@@ -37,7 +37,7 @@ struct SearchingPlayersView: View {
 //                            print("CardModel username = \(cardModel.users)")
                         }
                 }
-
+                            
                 .padding(.horizontal)
                 .listStyle(GroupedListStyle())
                 .scrollContentBackground(.hidden)

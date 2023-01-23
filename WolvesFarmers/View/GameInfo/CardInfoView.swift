@@ -13,32 +13,12 @@ struct CardInfoView: View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             VStack {
-                HStack {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(Color(UIColor(named: "ChevronColor")!))
-                            .bold()
-                    }
-                    Image("Wolf")
-                        .padding(.horizontal)
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "chevron.right")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(Color(UIColor(named: "ChevronColor")!))
-                            .bold()
-                    }
-                }
-                .padding(.top, 30)
-                .padding(.horizontal)
                 
-                  Spacer()
+                Image("Wolf")
+                    .padding(.horizontal)
+                    .padding(.top, 30)
+                
+                Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(Color(UIColor(named: "DarkBlue")!))

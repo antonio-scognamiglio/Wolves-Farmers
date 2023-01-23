@@ -17,15 +17,17 @@ struct WolvesFarmersApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
                 .environmentObject(gamerSession)
                 .environmentObject(cardModel)
-                .onAppear(){
+                .onAppear() {
                     saveUsername()
                     gamerSession.viewModel = cardModel
                 }
         }
     }
-    func saveUsername(){
+    
+    func saveUsername() {
         cardModel.username = gamerSession.myPeerId.displayName
     }
 }
