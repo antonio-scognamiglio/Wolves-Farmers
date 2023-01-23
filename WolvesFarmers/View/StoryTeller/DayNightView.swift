@@ -86,10 +86,6 @@ struct DayNightView: View {
                                     }
                                     .onAppear {
                                         cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
-
-                                        //                                    cardModel.cards.append(Card(name: characters[gamerSession.connectedPeers.firstIndex(of: peer)!], image: Image(""), username: peer.displayName, isDeath: false ))
-
-                                        //                                    print("Cards: \(cardModel.cards)")
                                     }
                                     .frame(width: 80, alignment: .leading)
                                 }
@@ -98,6 +94,12 @@ struct DayNightView: View {
                                         Image(systemName: "xmark")
                                             .foregroundColor(.red)
                                             .font(.system(size: 100))
+                                            .onAppear {
+                                                cardModel.isDied = gamerSession.send(cards: cardModel.cards, isDied: true, username: peer.displayName).0
+//                                                cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath = gamerSession.send(cards: cardModel.cards, isDied: true).0
+//                                                print("On appear \(cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath)")
+                                            }
+                                        
                                     }
                                 }
                                 .padding()
@@ -148,7 +150,7 @@ struct DayNightView: View {
             .animation(.linear(duration: 0.7), value: isDay)
         }.onAppear {
             print("CARDDD: \(cardModel.cards)")
-            cardModel.cards = gamerSession.send(cards: cardModel.cards, isMaster: false).1
+            cardModel.cards = gamerSession.send(cards: cardModel.cards, isDied: false, username: "").1
         }
     }
     

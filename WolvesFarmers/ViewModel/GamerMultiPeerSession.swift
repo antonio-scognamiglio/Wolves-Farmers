@@ -19,7 +19,7 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     private var serviceAdvertiser: MCNearbyServiceAdvertiser
     private var serviceBrowser: MCNearbyServiceBrowser
     private var log = Logger()
-    var isMaster:Bool = false
+    var isDied: Bool = false
     var cards: [Card] = []
     
     @Published var recvdInvite: Bool = false
@@ -74,43 +74,34 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
-//    func send(isMaster: Bool) -> Bool {
-//        precondition(Thread.isMainThread)
-//        //guard let data = try? Data(isMaster.description.data(using: .unicode)!) else { return }
-//        
-//        if !session.connectedPeers.isEmpty {
-//            do {
-//                try session.send(Data(isMaster.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
-//            } catch {
-//                log.error("Error for sending: \(String(describing: error))")
-//            }
-//        }
-//        return isMaster
-//    }
-    
-    func send(cards: [Card], isMaster: Bool) -> (Bool, [Card]) {
+    func send(cards: [Card], isDied: Bool, username: String) -> (Bool, [Card]) {
         precondition(Thread.isMainThread)
         
         if !session.connectedPeers.isEmpty {
           
-            if (!isMaster) {
+            if (!isDied) {
                 do {
-//                    try session.send(Data(card.name.description.data(using: .unicode)!), toPeers: session.connectedPeers, with: .reliable)
                     let data = try JSONEncoder().encode(cards)
                     try session.send(data, toPeers: session.connectedPeers, with: .reliable)
                       
                 } catch {
                     log.error("Error sending: \(String(describing: error))")
                 }
-            } else {
+            }
+            else {
                 do {
-                    try session.send(Data(isMaster.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
+                    for i in cards {
+                        if (i.username == username) {
+                            try session.send(Data(isDied.description.data(using: .utf8)!), toPeers: session.connectedPeers.filter({$0.displayName == username}), with: .reliable)
+                        }
+                    }
+//                    try session.send(Data(isDied.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
                 } catch {
                     log.error("Error sending: \(String(describing: error))")
                 }
             }
         }
-        return (isMaster, cards)
+        return (isDied, cards)
     }
 }
 
@@ -162,10 +153,13 @@ extension GamerMultiPeerSession: MCSessionDelegate {
         if let decodedCards = try? JSONDecoder().decode([Card].self, from: data) as [Card] {
             viewModel?.decoded(cards: decodedCards)
         } else {
-            // Qui è quale
-            print(String(data: data, encoding: .utf8))
-            isMaster = (String(data: data, encoding: .unicode).flatMap(Bool.init) != nil)
-            print("MASTER\(isMaster)")
+            DispatchQueue.main.async {
+                print(String(data: data, encoding: .utf8) ?? "")
+                self.viewModel?.isDied = (String(data: data, encoding: .utf8).flatMap(Bool.init) != nil)
+    //            isDied = (String(data: data, encoding: .utf8).flatMap(Bool.init) != nil)
+    //            print("MASTER\(isDied)")
+                print("DIED: \(String(describing: self.viewModel?.isDied))")
+            }
         }
         
     }

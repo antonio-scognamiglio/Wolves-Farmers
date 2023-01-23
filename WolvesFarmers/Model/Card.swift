@@ -21,28 +21,4 @@ struct Card: Identifiable, Codable, Equatable {
         Image(imageName)
     }
     
-//    var votes: Int
-    
-//    init() {
-//        self.id = UUID.init()
-//        self.name = ""
-//        self.image = Image(systemName: "")
-//        self.username = ""
-//        self.isDeath = false
-//        self.votation = 0
-//    }
-    
-//    init(name: String, image: Image, username: String, isDeath: Bool, votes: Int) {
-//        self.id = UUID.init()
-//        self.name = name
-//        self.image = image
-//        self.username = username
-//        self.isDeath = isDeath
-//        self.votes = votes
-//    }
-    
-//    init(name: String, username: MCPeerID) {
-//        self.name = name
-//        self.username = username
-//    }
 }
