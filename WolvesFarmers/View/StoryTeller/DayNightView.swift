@@ -69,6 +69,12 @@ struct DayNightView: View {
                             Button(action: {
                                 setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath.toggle()
                                 print("SO MORTO \(setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath)")
+                                if (setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath) {
+                                    cardModel.isDied = gamerSession.send(cards: cardModel.cards, isDied: true, isReborn: 0, username: peer.displayName).0
+                                } else {
+                                    cardModel.isReborn = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 1, username: peer.displayName).2
+                                }
+                                
                             }, label: {
                                 HStack {
                                     if !setCards.isEmpty {
@@ -95,7 +101,7 @@ struct DayNightView: View {
                                             .foregroundColor(.red)
                                             .font(.system(size: 100))
                                             .onAppear {
-                                                cardModel.isDied = gamerSession.send(cards: cardModel.cards, isDied: true, username: peer.displayName).0
+                                                
 //                                                cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath = gamerSession.send(cards: cardModel.cards, isDied: true).0
 //                                                print("On appear \(cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath)")
                                             }
@@ -150,7 +156,7 @@ struct DayNightView: View {
             .animation(.linear(duration: 0.7), value: isDay)
         }.onAppear {
             print("CARDDD: \(cardModel.cards)")
-            cardModel.cards = gamerSession.send(cards: cardModel.cards, isDied: false, username: "").1
+            cardModel.cards = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 0, username: "").1
         }
     }
     

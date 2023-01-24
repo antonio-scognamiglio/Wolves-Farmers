@@ -31,16 +31,16 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     init(username: String) {
         let peerID = MCPeerID(displayName: username)
         self.myPeerId = peerID
-
+        
         session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .none)
         serviceAdvertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceType)
         serviceBrowser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
         super.init()
-
+        
         session.delegate = self
         serviceAdvertiser.delegate = self
         serviceBrowser.delegate = self
-
+        
         serviceAdvertiser.startAdvertisingPeer()
         serviceBrowser.startBrowsingForPeers()
     }
@@ -74,34 +74,44 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
-    func send(cards: [Card], isDied: Bool, username: String) -> (Bool, [Card]) {
+    func send(cards: [Card], isDied: Bool, isReborn: Int, username: String) -> (Bool, [Card], Int) {
         precondition(Thread.isMainThread)
         
         if !session.connectedPeers.isEmpty {
-          
-            if (!isDied) {
+            
+            if (!isDied && isReborn == 0) {
                 do {
                     let data = try JSONEncoder().encode(cards)
                     try session.send(data, toPeers: session.connectedPeers, with: .reliable)
-                      
+                    
                 } catch {
                     log.error("Error sending: \(String(describing: error))")
                 }
             }
-            else {
+            else if(isDied && isReborn == 0) {
                 do {
                     for i in cards {
                         if (i.username == username) {
                             try session.send(Data(isDied.description.data(using: .utf8)!), toPeers: session.connectedPeers.filter({$0.displayName == username}), with: .reliable)
                         }
                     }
-//                    try session.send(Data(isDied.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
+                    //                    try session.send(Data(isDied.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
+                } catch {
+                    log.error("Error sending: \(String(describing: error))")
+                }
+            } else if (!isDied && isReborn == 1) {
+                do {
+                    for i in cards {
+                        if (i.username == username) {
+                            try session.send(Data(isReborn.description.data(using: .utf8)!), toPeers: session.connectedPeers.filter({$0.displayName == username}), with: .reliable)
+                        }
+                    }
                 } catch {
                     log.error("Error sending: \(String(describing: error))")
                 }
             }
         }
-        return (isDied, cards)
+        return (isDied, cards, isReborn)
     }
 }
 
@@ -141,12 +151,13 @@ extension GamerMultiPeerSession: MCSessionDelegate {
         }
     }
     
-//    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-//        print("aaaaaa")
-//        print(String(data: data, encoding: .unicode).flatMap(Bool.init))
-//        isMaster = (String(data: data, encoding: .unicode).flatMap(Bool.init) != nil)
-//        print("MASTER\(isMaster)")
-//    }
+    //    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    //        print("aaaaaa")
+    //        print(String(data: data, encoding: .unicode).flatMap(Bool.init))
+    //        isMaster = (String(data: data, encoding: .unicode).flatMap(Bool.init) != nil)
+    //        print("MASTER\(isMaster)")
+    //    }
+    
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         print("aaaaaa")
         
@@ -154,13 +165,19 @@ extension GamerMultiPeerSession: MCSessionDelegate {
             viewModel?.decoded(cards: decodedCards)
         } else {
             DispatchQueue.main.async {
+                
                 print(String(data: data, encoding: .utf8) ?? "")
-                self.viewModel?.isDied = (String(data: data, encoding: .utf8).flatMap(Bool.init) != nil)
-    //            isDied = (String(data: data, encoding: .utf8).flatMap(Bool.init) != nil)
-    //            print("MASTER\(isDied)")
-                print("DIED: \(String(describing: self.viewModel?.isDied))")
+                if let died = try? (String(data: data, encoding: .utf8).flatMap(Bool.init) != nil) as Bool {
+                    self.viewModel?.isDied = died
+                }
+                
+                else if let reborn = try? (String(data: data, encoding: .utf8).flatMap(Int.init))! as Int {
+                    self.viewModel?.isReborn = reborn
+                }
+                
             }
         }
+        
         
     }
     
