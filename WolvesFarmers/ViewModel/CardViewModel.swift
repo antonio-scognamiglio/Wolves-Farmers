@@ -16,7 +16,7 @@ class CardViewModel: ObservableObject {
     @Published var username = ""
     @Published var isMaster = false
     @Published var isStarted = false
-    //if isReborn is 0 you aren't reborn else if is 1 you are reborn
+    //if isReborn is 0 you aren't reborn else if is 1 you are reborn 
     @Published var isReborn = 0
     
     @Published var isDied = false
