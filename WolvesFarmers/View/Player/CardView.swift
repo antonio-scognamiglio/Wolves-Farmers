@@ -11,7 +11,6 @@ struct CardView: View {
     @State var cardImage: Image
     @State var cardName: String
     @Binding var isHidden: Bool
-    // Qui bisogna collegare il model e far vedere solo la carta assegnata allo specifico device
     @EnvironmentObject var cardModel: CardViewModel
     
     var body: some View {

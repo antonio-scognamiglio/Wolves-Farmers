@@ -48,7 +48,7 @@ struct PlayerGameStartedView: View {
                             .padding()
                     }
                     
-                    if (cardModel.isDied) {
+                    if (cardModel.isDied && cardModel.isReborn == 0) {
                         Text("SO MORTO").font(.title).foregroundColor(.red)
                     }
                     
