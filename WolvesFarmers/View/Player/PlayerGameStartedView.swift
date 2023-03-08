@@ -37,6 +37,15 @@ struct PlayerGameStartedView: View {
 //                    .frame(width: geo.size.width * 0.95)
                     
                     CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isFlipped)
+                        .overlay {
+                            if (cardModel.isDied && cardModel.isReborn == 0) {
+                                Image(systemName: "xmark")
+                                .resizable()
+                                .padding(30)
+                                .fontWeight(.thin)
+                                .foregroundColor(.red).opacity(0.9)
+                            }
+                        }
                     Button {
 //                        print ("Is master: \(cardModel.isMaster)")
 //                        if cardModel.isMaster {
@@ -48,9 +57,9 @@ struct PlayerGameStartedView: View {
                             .padding()
                     }
                     
-                    if (cardModel.isDied && cardModel.isReborn == 0) {
-                        Text("SO MORTO").font(.title).foregroundColor(.red)
-                    }
+//                    if (cardModel.isDied && cardModel.isReborn == 0) {
+//                        Text("SO MORTO").font(.title).foregroundColor(.red)
+//                    }
                     
                 }
             }
