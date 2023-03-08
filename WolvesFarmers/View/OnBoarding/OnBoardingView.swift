@@ -20,7 +20,7 @@ struct OnBoardingView: View {
                     .tag(0)
                 OnBoarding(image: "book", startButton: false, skipButton: true, title: "Read the instructions", selection: $selection)
                     .tag(1)
-                OnBoarding(image: "village", startButton: false, skipButton: true, title: "Choose your side", selection: $selection)
+                OnBoarding(image: "village", startButton: false, skipButton: true, title: "Fight for your side", selection: $selection)
                     .tag(2)
                 OnBoarding(image: "beware", startButton: true, skipButton: false, title: "Good luck and stay alive!", selection: $selection)
                     .tag(3)

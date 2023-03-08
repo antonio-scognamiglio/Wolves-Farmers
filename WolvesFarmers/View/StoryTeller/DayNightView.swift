@@ -130,7 +130,6 @@ struct DayNightView: View {
                         .padding()
                 }
                    
-                
                     Button(action: {
                         cardModel.endGame = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 0, username: "", isEnded: "END").3
                         cardModel.reset()
