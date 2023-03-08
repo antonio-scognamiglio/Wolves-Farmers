@@ -52,7 +52,7 @@ struct ContentView: View {
                         
                     }
                     
-                    NavigationLink(destination: PlayerGameStartedView()) {
+                    NavigationLink(destination: AddNickname()) {
                         
                         Text("Join a game")
                             .foregroundColor(Color.yellowButton)

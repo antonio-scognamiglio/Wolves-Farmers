@@ -10,7 +10,7 @@ import SwiftUI
 struct AddNickname: View {
     @State private var username = ""
     @EnvironmentObject var gamerSession: GamerMultiPeerSession
-//    @EnvironmentObject var cardVieModel: CardViewModel
+    @EnvironmentObject var cardModel: CardViewModel
     @State var isNavigation = false
     
     var body: some View {
@@ -27,9 +27,11 @@ struct AddNickname: View {
                         .fill(.white)
                         .frame(width: UIScreen.main.bounds.width / 1.50, height: 2).padding(.bottom, 230)
                     
-                    NavigationLink(destination: GameView(), isActive: $isNavigation) {
+                    NavigationLink(destination: PlayerGameStartedView(), isActive: $isNavigation) {
                         Button(action: {
                             gamerSession.assignUsername(username: username)
+                            saveUsername()
+                            print("Username: \(cardModel.username)")
                             isNavigation.toggle()
                         }) {
                             Text("Confirm name")
@@ -47,6 +49,9 @@ struct AddNickname: View {
             }
           
         }
+    func saveUsername() {
+        cardModel.username = gamerSession.myPeerId.displayName
+    }
 }
 
 

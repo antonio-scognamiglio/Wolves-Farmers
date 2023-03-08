@@ -45,10 +45,10 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         serviceBrowser.startBrowsingForPeers()
     }
     
-    func assignUsername(username: String) -> MCPeerID {
+    func assignUsername(username: String) {
         let peerID = MCPeerID(displayName: username)
         self.myPeerId = peerID
-        return peerID
+//        return peerID
     }
     
     override init() {
