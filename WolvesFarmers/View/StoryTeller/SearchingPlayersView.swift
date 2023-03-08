@@ -32,10 +32,7 @@ struct SearchingPlayersView: View {
                 List(gamerSession.connectedPeers, id: \.self) { peer in
                    Text(peer.displayName)
                         .foregroundColor(.black)
-                        .onAppear {
-//                            cardModel.users.append(peer.displayName)
-//                            print("CardModel username = \(cardModel.users)")
-                        }
+
                 }
                             
                 .padding(.horizontal)
@@ -53,6 +50,8 @@ struct SearchingPlayersView: View {
                 }
                 
             }
+        }.onAppear {
+            print("Tutti gli utenti: \(gamerSession.connectedPeers)")
         }
     }
 }

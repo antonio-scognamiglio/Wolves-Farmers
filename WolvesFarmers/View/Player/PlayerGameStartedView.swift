@@ -56,6 +56,8 @@ struct PlayerGameStartedView: View {
             }
         }.onAppear() {
             print("Provo CARD: \(cardModel.isDied)")
+            print("Card Username: \(cardModel.username)")
+            print("Gamer display: \(gameModel.myPeerId.displayName)")
         }
     }
     public func showCard() -> Card {
