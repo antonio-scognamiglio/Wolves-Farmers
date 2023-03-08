@@ -74,7 +74,7 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         self.serviceBrowser.stopBrowsingForPeers()
     }
     
-    func send(cards: [Card], isDied: Bool, isReborn: Int, username: String) -> (Bool, [Card], Int) {
+    func send(cards: [Card], isDied: Bool, isReborn: Int, username: String, isEnded: String) -> (Bool, [Card], Int, String) {
         precondition(Thread.isMainThread)
         
         if !session.connectedPeers.isEmpty {
@@ -110,8 +110,15 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
                     log.error("Error sending: \(String(describing: error))")
                 }
             }
+            
+            do {
+                try session.send(Data(isEnded.description.data(using: .utf8)!), toPeers: session.connectedPeers, with: .reliable)
+            } catch {
+                log.error("Error sending: \(String(describing: error))")
+            }
+            
         }
-        return (isDied, cards, isReborn)
+        return (isDied, cards, isReborn, isEnded)
     }
 }
 
@@ -173,6 +180,10 @@ extension GamerMultiPeerSession: MCSessionDelegate {
                 
                 else if let reborn = try? (String(data: data, encoding: .utf8).flatMap(Int.init))! as Int {
                     self.viewModel?.isReborn = reborn
+                }
+                
+                else if let endGame = try? (String(data: data, encoding: .utf8)) as! String {
+                    self.viewModel?.endGame = endGame
                 }
                 
             }
