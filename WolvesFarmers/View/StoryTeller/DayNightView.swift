@@ -21,49 +21,57 @@ struct DayNightView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack {
-                // Day
+            ZStack {
                 if isDay {
-                    Image(systemName: "sun.and.horizon")
-                        .foregroundColor(.textYellow)
-                        .font(.system(size: 50))
-                        .padding(.bottom, 5)
-                    
-                    Text("Morning Time")
-                        .foregroundColor(.white)
-                        .font(.system(size: 25))
-                        .bold()
-                        .padding(.bottom, 10)
-                    
-                    Text("Good morning, the town hall is waiting for you")
-                        .multilineTextAlignment(.center)
-                        .frame(width: UIScreen.main.bounds.width / 1.30)
-                        .foregroundColor(.textYellow)
-                        .font(.system(size: 18))
-                } else
-                // Night
-                {
-                    Image(systemName: "moon.fill")
-                        .foregroundColor(.textYellow)
-                        .font(.system(size: 41))
-                        .padding(.bottom, 5)
-                    
-                    Text("Night Time")
-                        .foregroundColor(.white)
-                        .font(.system(size: 25))
-                        .bold()
-                        .padding(.bottom, 10)
-                    
-                    Text("The night is coming, you might not survive.. ")
-                        .multilineTextAlignment(.center)
-                        .frame(width: UIScreen.main.bounds.width / 1.30)
-                        .foregroundColor(.textYellow)
-                        .font(.system(size: 18))
+                    Color.backgroundColor
+                        .ignoresSafeArea()
+                } else {
+                    Color.backgroundColorDark
+                        .ignoresSafeArea()
                 }
                 
-                
-                ScrollView {
-                    LazyVGrid (columns: columns) {
+                VStack {
+                    // Day
+                    if isDay {
+                        Image(systemName: "sun.and.horizon")
+                            .foregroundColor(.textYellow)
+                            .font(.system(size: 50))
+                            .padding(.bottom, 5)
+                        
+                        Text("Morning Time")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            .bold()
+                            .padding(.bottom, 10)
+                        
+                        Text("Good morning, the town hall is waiting for you")
+                            .multilineTextAlignment(.center)
+                            .frame(width: UIScreen.main.bounds.width / 1.30)
+                            .foregroundColor(.textYellow)
+                            .font(.system(size: 18))
+                    } else
+                    // Night
+                    {
+                        Image(systemName: "moon.fill")
+                            .foregroundColor(.textYellow)
+                            .font(.system(size: 41))
+                            .padding(.bottom, 5)
+                        
+                        Text("Night Time")
+                            .foregroundColor(.white)
+                            .font(.system(size: 25))
+                            .bold()
+                            .padding(.bottom, 10)
+                        
+                        Text("The night is coming, you might not survive.. ")
+                            .multilineTextAlignment(.center)
+                            .frame(width: UIScreen.main.bounds.width / 1.30)
+                            .foregroundColor(.textYellow)
+                            .font(.system(size: 18))
+                    }
+                    
+                    
+                    ScrollView {
                         ForEach(gamerSession.connectedPeers, id: \.self) { peer in
                             
                             Button(action: {
@@ -79,9 +87,18 @@ struct DayNightView: View {
                                 HStack {
                                     if !setCards.isEmpty {
                                         setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
+                                            .overlay {
+                                                if (setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath) {
+                                                    Image(systemName: "xmark")
+                                                        .foregroundColor(.red)
+                                                        .font(.system(size: 80))
+                                                    
+                                                }
+                                            }
                                     }
+                                    
                                     Spacer()
-                                    VStack(alignment: .leading) {
+                                    VStack(alignment: .leading, spacing: 3) {
                                         Text(peer.displayName)
                                             .foregroundColor(.black)
                                         if !setCards.isEmpty {
@@ -90,22 +107,9 @@ struct DayNightView: View {
                                                 .foregroundColor(.black)
                                         }
                                     }
+                                    .padding(.horizontal, 30)
                                     .onAppear {
                                         cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
-                                    }
-                                    .frame(width: 80, alignment: .leading)
-                                }
-                                .overlay {
-                                    if (setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath) {
-                                        Image(systemName: "xmark")
-                                            .foregroundColor(.red)
-                                            .font(.system(size: 100))
-                                            .onAppear {
-                                                
-//                                                cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath = gamerSession.send(cards: cardModel.cards, isDied: true).0
-//                                                print("On appear \(cardModel.cards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath)")
-                                            }
-                                        
                                     }
                                 }
                                 .padding()
@@ -113,23 +117,20 @@ struct DayNightView: View {
                                     RoundedRectangle(cornerRadius: 15)
                                         .fill(.white)
                                 }
-                                .padding(4)
                             })
+                            .frame(width: UIScreen.main.bounds.width / 1.13 , height: UIScreen.main.bounds.height / 8.5 )
                             
                         }
                     }
                     .padding()
-                }
-                .scrollDisabled(true)
-                
-                
-                Button {
-                    isDay.toggle()
-                } label: {
-                    BigButtonView(text: isDay ? "Switch to Night" : "Switch to Day", textColor: .black, backgroundColor: .yellowButton)
-                        .padding()
-                }
-                   
+                    
+                    Button {
+                        isDay.toggle()
+                    } label: {
+                        BigButtonView(text: isDay ? "Switch to Night" : "Switch to Day", textColor: .black, backgroundColor: .yellowButton)
+                            .padding()
+                    }
+                    
                     Button(action: {
                         cardModel.endGame = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 0, username: "", isEnded: "END").3
                         cardModel.reset()
@@ -141,20 +142,12 @@ struct DayNightView: View {
                             .animation(.linear, value: isDay)
                             .padding(.bottom, 10)
                     })
-                
-                
-            }
-            .navigationBarBackButtonHidden()
-            .background {
-                if isDay {
-                    Color.backgroundColor
-                        .ignoresSafeArea()
-                } else {
-                    Color.backgroundColorDark
-                        .ignoresSafeArea()
+                    
+                    
                 }
+                .navigationBarBackButtonHidden()
+                .animation(.linear(duration: 0.7), value: isDay)
             }
-            .animation(.linear(duration: 0.7), value: isDay)
         }.onAppear {
             print("CARDDD: \(cardModel.cards)")
             cardModel.cards = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 0, username: "", isEnded: "").1
@@ -171,7 +164,7 @@ struct DayNightView_Previews: PreviewProvider {
                                           Card(name: "Farmer", imageName: "Farmer"),
                                           Card(name: "Farmer", imageName: "Farmer"),
                                           Card(name: "Farmer", imageName: "Farmer")]))
-            .environmentObject(GamerMultiPeerSession())
-            .environmentObject(CardViewModel())
+        .environmentObject(GamerMultiPeerSession())
+        .environmentObject(CardViewModel())
     }
 }
