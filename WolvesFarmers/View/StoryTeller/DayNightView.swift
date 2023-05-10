@@ -144,6 +144,7 @@ struct DayNightView: View {
                 
                 
             }
+            .navigationBarBackButtonHidden()
             .background {
                 if isDay {
                     Color.backgroundColor

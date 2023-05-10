@@ -25,6 +25,8 @@ struct SearchingPlayersView: View {
                         .font(.title2)
                         .bold()
                     Text("Minimum of 6 players are required")
+                        .font(.title2)
+                        .minimumScaleFactor(0.7)
                         .foregroundColor(.white)
                 }
                 .padding()

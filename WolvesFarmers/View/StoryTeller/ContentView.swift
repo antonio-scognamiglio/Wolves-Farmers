@@ -25,12 +25,14 @@ struct ContentView: View {
                     NavigationLink(destination: GameRulesView()) {
                         HStack(spacing: 15) {
                             Text("How to Play?")
+                                .font(.title2)
+                                .minimumScaleFactor(0.7)
                             Image(systemName: "info.circle")
                         }.foregroundColor(Color.yellowButton)
                             .buttonStyle(BorderlessButtonStyle())
                             .padding(.horizontal, 30)
                             .padding(.vertical, 15)
-                            .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.width / 8.50)
+                            .frame(width: UIScreen.main.bounds.width / 1.7, height: UIScreen.main.bounds.height / 16)
                             .background(Color(UIColor(named: "1E1F24Color")!))
                             .cornerRadius(30)
                     }.padding(.bottom, 100)
@@ -85,5 +87,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(gamerSession: .init())
+            .environmentObject(CardViewModel())
     }
 }
