@@ -12,10 +12,6 @@ struct CharacterListView: View {
     @EnvironmentObject var cardModel: CardViewModel
     @State var setCards = [Card]()
     
-    let columns = [
-        GridItem(.fixed(180)),
-        GridItem(.fixed(180))
-    ]
     
     //    let characters: [String] = ["Wolf", "Seer", "Guardian", "Farmer", "Zorro", "Pepp"].shuffled()
     
@@ -31,9 +27,9 @@ struct CharacterListView: View {
                         if !setCards.isEmpty {
                             setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50, height: 50, alignment: .leading)
                                 .padding(.leading)
+                                .padding(.trailing, 20)
                         }
                         
-                        Spacer()
                         VStack(alignment: .leading, spacing: 3) {
                             Text(peer.displayName)
                                 .foregroundColor(.black)
@@ -44,12 +40,13 @@ struct CharacterListView: View {
                                     .foregroundColor(.black)
                             }
                         }
-                        .padding(.horizontal, 30)
+                        Spacer()
                         .onAppear {
                             cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
                             
                         }
                     }
+                 
                     .frame(width: UIScreen.main.bounds.width / 1.13 , height: UIScreen.main.bounds.height / 8.5 )
                     .background {
                         RoundedRectangle(cornerRadius: 20).fill(Color.white)

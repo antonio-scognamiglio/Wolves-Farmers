@@ -87,6 +87,7 @@ struct DayNightView: View {
                                 HStack {
                                     if !setCards.isEmpty {
                                         setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].image.resizable().frame(width: 50,height: 50)
+                                            .padding(.trailing, 20)
                                             .overlay {
                                                 if (setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].isDeath) {
                                                     Image(systemName: "xmark")
@@ -97,7 +98,6 @@ struct DayNightView: View {
                                             }
                                     }
                                     
-                                    Spacer()
                                     VStack(alignment: .leading, spacing: 3) {
                                         Text(peer.displayName)
                                             .foregroundColor(.black)
@@ -107,6 +107,7 @@ struct DayNightView: View {
                                                 .foregroundColor(.black)
                                         }
                                     }
+                                    Spacer()
                                     .padding(.horizontal, 30)
                                     .onAppear {
                                         cardModel.cards.append(Card(name: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].name, imageName: setCards[gamerSession.connectedPeers.firstIndex(of: peer)!].imageName , username: peer.displayName, isDeath: false))
