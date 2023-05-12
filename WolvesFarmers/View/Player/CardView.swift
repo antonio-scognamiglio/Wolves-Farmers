@@ -18,18 +18,20 @@ struct CardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.cardColorGradient)
-                .background{
+                .background {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(lineWidth: 13)
                 }
-                .frame(height: UIScreen.main.bounds.height * 0.45)
+                .frame(width: UIScreen.main.bounds.width * 0.75)
+                .aspectRatio( 2/3, contentMode: .fit)
                 .padding()
+                .padding(.top)
             VStack {
                     if !isHidden {
                         Image("Moon")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 200)
+                            .frame(width: 150)
                         Text("")
                             .foregroundColor(.yellowButton)
                             .fontWeight(.bold)
@@ -38,7 +40,7 @@ struct CardView: View {
                     cardImage
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200)
+                        .frame(width: 150)
                         .shadow(radius: 5)
                     Text(cardName)
                         .foregroundColor(.yellowButton)
@@ -46,8 +48,6 @@ struct CardView: View {
                         .font(.system(size: 38, design: .monospaced))
                 }
             }
-            
-            
         }
     }
 }

@@ -29,7 +29,7 @@ class CardViewModel: ObservableObject {
     
     var deck: [Card] {
         
-        var cardArray:[Card] = [Card(name: "Wolf", imageName: "WolfGameOver"),
+        var cardArray: [Card] = [Card(name: "Wolf", imageName: "WolfGameOver"),
                                Card(name: "Seer", imageName: "Seer"),
                                Card(name: "Guardian", imageName: "Guardian"),
                                Card(name: "Farmer", imageName: "Farmer"),
