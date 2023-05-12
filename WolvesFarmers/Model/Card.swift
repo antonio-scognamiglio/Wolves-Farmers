@@ -16,6 +16,9 @@ struct Card: Identifiable, Codable, Equatable {
     var username: String = ""
     var isDeath: Bool = false
     var info: [String] = []
+    var mainObjective: String = "To kill all the wolves."
+    var day: String = "They express their vote to kill one person."
+    var night: String = ""
     
     var image: Image {
         Image(imageName)

@@ -29,80 +29,80 @@ class CardViewModel: ObservableObject {
     
     var deck: [Card] {
         
-        var cardArray:[Card] = [Card(name: "Wolf", imageName: "WolfGameOver"),
-                               Card(name: "Seer", imageName: "Seer"),
-                               Card(name: "Guardian", imageName: "Guardian"),
-                               Card(name: "Farmer", imageName: "Farmer"),
-                               Card(name: "Farmer", imageName: "Farmer"),
-                               Card(name: "Farmer", imageName: "Farmer")]
+        var cardArray: [Card] = [Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                               Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                               Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                               Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                               Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                               Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
         
         switch numberOfPlayer {
         
        
         case .seven:
-            cardArray.append(Card(name: "Farmer", imageName: "Farmer"))
+            cardArray.append(Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."))
                    
         case .eight:
-            cardArray.append(Card(name: "Farmer", imageName: "Farmer"))
-            cardArray.append(Card(name: "Wolf", imageName: "WolfGameOver"))
+            cardArray.append(Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."))
+            cardArray.append(Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."))
             
         case .nine:
-            return [Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Seer", imageName: "Seer"),
-                    Card(name: "Guardian", imageName: "Guardian"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer")]
+            return [Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                    Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
             
         case .ten:
-            return [Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Seer", imageName: "Seer"),
-                    Card(name: "Guardian", imageName: "Guardian"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer")]
+            return [Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                    Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
          
         case .eleven:
             return [Card(name: "Wolf",
-                         imageName: "WolfGameOver"),
-                    Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Seer", imageName: "Seer"),
-                    Card(name: "Guardian", imageName: "Guardian"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer")]
+                         imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                    Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
             
         case .twelve:
-            return [Card(name: "Wolf", imageName:  "WolfGameOver"),
-                    Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Seer", imageName: "Seer"),
-                    Card(name: "Guardian", imageName: "Guardian"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer")]
+            return [Card(name: "Wolf", imageName:  "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                    Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
         default:
-            return [Card(name: "Wolf", imageName: "WolfGameOver"),
-                    Card(name: "Seer", imageName: "Seer"),
-                    Card(name: "Guardian", imageName: "Guardian"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer"),
-                    Card(name: "Farmer", imageName: "Farmer")]
+            return [Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
+                    Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
+                    Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."),
+                    Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions.")]
         
         }
         return cardArray

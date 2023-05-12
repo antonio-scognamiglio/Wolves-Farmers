@@ -71,7 +71,7 @@ struct PlayerGameStartedView: View {
     }
     public func showCard() -> Card {
         print("CARDMODEL: \(cardModel.cards)")
-        return cardModel.cards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "")
+        return cardModel.cards.first(where: {$0.username == cardModel.username}) ?? Card(name: "", imageName: "", night: "")
     }
       
 }

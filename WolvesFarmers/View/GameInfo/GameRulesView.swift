@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GameRulesView: View {
+    
     var body: some View {
         
         ZStack {
@@ -27,16 +28,16 @@ struct GameRulesView: View {
                         .font(.system(size: 20, weight: .regular, design: .rounded))
                     Spacer()
                     // This should be fixed to let each row navigate to the corresponding CardInfoView
-                    NavigationLink (destination: CardInfoView()) {
+                    NavigationLink (destination: CardInfoView(card: Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."))) {
                         GameRulesCard(characterImage: "WolfRules", characterName: "Wolf")
                     }
-                    NavigationLink (destination: CardInfoView()) {
+                    NavigationLink (destination: CardInfoView(card: Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."))) {
                         GameRulesCard(characterImage: "WizardRules", characterName: "Seer")
                     }
-                    NavigationLink (destination: CardInfoView()) {
+                    NavigationLink (destination: CardInfoView(card: Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."))) {
                         GameRulesCard(characterImage: "GuardianRules", characterName: "Guardian")
                     }
-                    NavigationLink(destination: CardInfoView()) {
+                    NavigationLink(destination: CardInfoView(card: Card(name: "Farmer", imageName: "Farmer", night: "The farmer doesn't have special actions."))) {
                         GameRulesCard(characterImage: "WolfRules", characterName: "Farmer")}
                     }
 
