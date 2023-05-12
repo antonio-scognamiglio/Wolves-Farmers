@@ -29,6 +29,7 @@ class CardViewModel: ObservableObject {
     
     var deck: [Card] {
         
+
         var cardArray: [Card] = [Card(name: "Wolf", imageName: "WolfGameOver", mainObjective: "To kill all the villagers.", night: "The wolves choose one person that they want to kill."),
                                Card(name: "Seer", imageName: "Seer", night: "The seer can ask the master if another character is a wolf."),
                                Card(name: "Guardian", imageName: "Guardian", night: "The guardian can protect one person every night, but he/she can only protect himself once during the game."),

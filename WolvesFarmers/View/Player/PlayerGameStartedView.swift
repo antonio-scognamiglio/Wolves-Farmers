@@ -57,6 +57,11 @@ struct PlayerGameStartedView: View {
                             .padding()
                     }
                     
+//                    .onChange(of: cardModel.endGame, perform: { _ in
+                        if cardModel.endGame == "END" {
+                            Text("END").font(.title).foregroundColor(.red)
+                        }
+//                    })
 //                    if (cardModel.isDied && cardModel.isReborn == 0) {
 //                        Text("SO MORTO").font(.title).foregroundColor(.red)
 //                    }
@@ -67,7 +72,9 @@ struct PlayerGameStartedView: View {
             print("Provo CARD: \(cardModel.isDied)")
             print("Card Username: \(cardModel.username)")
             print("Gamer display: \(gameModel.myPeerId.displayName)")
+            print("\(cardModel.endGame) endGame")
         }
+        
     }
     public func showCard() -> Card {
         print("CARDMODEL: \(cardModel.cards)")

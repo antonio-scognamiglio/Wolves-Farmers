@@ -32,6 +32,8 @@ struct AddNickname: View {
                             gamerSession.assignUsername(username: username)
                             saveUsername()
                             print("Username: \(cardModel.username)")
+                            username = gamerSession.send(cards: cardModel.cards, isDied: false, isReborn: 1, username: cardModel.username, isEnded: "").3
+                            print("UUUUU: \(username)")
                             isNavigation.toggle()
                         }) {
                             Text("Confirm name")
@@ -58,5 +60,6 @@ struct AddNickname: View {
 struct AddNickname_Previews: PreviewProvider {
     static var previews: some View {
         AddNickname(gamerSession: .init())
+            .environmentObject(CardViewModel())
     }
 }

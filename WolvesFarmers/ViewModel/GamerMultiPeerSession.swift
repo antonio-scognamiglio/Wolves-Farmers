@@ -78,7 +78,6 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
         precondition(Thread.isMainThread)
         
         if !session.connectedPeers.isEmpty {
-            
             if (!isDied && isReborn == 0) {
                 do {
                     let data = try JSONEncoder().encode(cards)
