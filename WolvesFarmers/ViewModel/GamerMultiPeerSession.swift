@@ -19,8 +19,8 @@ class GamerMultiPeerSession: NSObject, ObservableObject {
     private var serviceAdvertiser: MCNearbyServiceAdvertiser
     private var serviceBrowser: MCNearbyServiceBrowser
     private var log = Logger()
-    var isDied: Bool = false
-    var cards: [Card] = []
+    @Published var isDead: Bool = false
+    @Published var cards: [Card] = []
     
     @Published var recvdInvite: Bool = false
     @Published var recvdInviteFrom: MCPeerID? = nil
