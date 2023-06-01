@@ -10,7 +10,7 @@ import SwiftUI
 struct PlayerGameStartedView: View {
     @EnvironmentObject var cardModel: CardViewModel
     @EnvironmentObject var gameModel: GamerMultiPeerSession
-    @State var isFlipped = false
+    @State var isHidden = true
     var body: some View {
         
         GeometryReader { geo in
@@ -36,12 +36,12 @@ struct PlayerGameStartedView: View {
 //                    }
 //                    .frame(width: geo.size.width * 0.95)
                     
-                    CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isFlipped)
+                    CardView(cardImage: showCard().image , cardName: showCard().name, isHidden: $isHidden)
 
                     Button {
 //                        print ("Is master: \(cardModel.isMaster)")
 //                        if cardModel.isMaster {
-                        isFlipped.toggle()
+                        isHidden.toggle()
 //                        }
                         // More actions to come
                     } label: {
