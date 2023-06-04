@@ -19,11 +19,11 @@ struct PlayerGameStartedView: View {
                     .ignoresSafeArea()
                 VStack {
                     Group {
-                        Text("Game has started")
+                        Text("Game in progress")
                             .font(.title)
                             .fontWeight(.semibold)
                             .padding(.bottom, 2)
-                        Text("Please pay attention to the master")
+                        Text("Please pay attention to the storyteller")
                             .padding(.bottom, 25)
                     }
                     .foregroundColor(.white)
