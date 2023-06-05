@@ -2,6 +2,7 @@
 [![](https://img.shields.io/badge/iOS-16.0-orange)](#)
 [![](https://img.shields.io/badge/Platforms-iPhone-blue)](#)
 [![](https://img.shields.io/badge/Category-Game-brightgreen)](#)
+[![](https://img.shields.io/badge/Technologies-SwiftUI%20%7C%20Multipeer-yellow)](#)
 
 A digital version of the party card game Lupus in Tabula. In this game there are different roles associated to characters and each of them can perform different actions during the game. The game is divided into 2 phases - day and night - and there are two parties who fight against one another: the village and the wolves. The game ends when one of the 2 parties manages to get the better of the other. 
 
